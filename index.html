@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>意見反映單流程拆解簡報</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Itim&family=Noto+Sans+TC:wght@400;700&display=swap');
+
+  :root {
+    --ink: #2c3e50;
+    --paper: #fffcf2;
+    --line: #e2e8f0;
+    --highlight-yellow: rgba(255, 235, 59, 0.6);
+    --highlight-pink: rgba(255, 152, 175, 0.6);
+    --highlight-green: rgba(167, 243, 208, 0.6);
+  }
+
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Itim', 'Chalkboard SE', 'SetoFont', 'cwTeXKai', 'Noto Sans TC', sans-serif;
+    color: var(--ink);
+    background: repeating-linear-gradient(transparent, transparent 39px, var(--line) 39px, var(--line) 40px) var(--paper);
+    overflow: hidden;
+  }
+
+  #slider {
+    display: flex; width: 100vw; height: 100vh;
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .slide {
+    min-width: 100vw; height: 100vh; display: flex; flex-direction: column;
+    justify-content: center; align-items: center; padding: 50px; box-sizing: border-box;
+  }
+
+  .sketchy-box {
+    background: white; padding: 40px 60px; max-width: 950px; width: 90%;
+    border: 3px solid var(--ink);
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    box-shadow: 6px 6px 0px rgba(44, 62, 80, 0.15);
+    transform: rotate(-1deg); position: relative;
+  }
+  
+  .sketchy-box:nth-child(even) {
+    transform: rotate(1deg); border-radius: 4% 3% 6% 2% / 2% 3% 1% 4%;
+  }
+
+  h1 { font-size: 2.8rem; margin-top: 0; line-height: 1.3; text-align: center; }
+  h2 { font-size: 2rem; color: #475569; border-bottom: 3px dashed var(--highlight-yellow); display: inline-block; }
+  h3 { font-size: 1.6rem; color: #334155; margin-bottom: 10px; }
+  p, li { font-size: 1.6rem; line-height: 1.8; margin: 15px 0; }
+  ul, ol { padding-left: 30px; }
+
+  .hl-yellow { background: linear-gradient(180deg, transparent 60%, var(--highlight-yellow) 40%); }
+  .hl-pink { background: linear-gradient(180deg, transparent 60%, var(--highlight-pink) 40%); }
+  .hl-green { background: linear-gradient(180deg, transparent 60%, var(--highlight-green) 40%); }
+
+  .sticker {
+    display: inline-block; padding: 5px 15px; background: #ffecb3;
+    border: 2px solid var(--ink); border-radius: 15px 5px 15px 5px;
+    font-weight: bold; transform: rotate(-2deg);
+    margin-right: 5px;
+    margin-bottom: 10px;
+  }
+
+  .flow-list { list-style: none; padding: 0; margin-top: 20px; }
+  .flow-list li {
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 2px dashed var(--line); padding-bottom: 10px; margin-bottom: 15px;
+  }
+  .arrow { font-size: 2rem; color: #94a3b8; margin: 0 15px; }
+
+  .code-block {
+    background: #1e293b; color: #e2e8f0; font-family: monospace;
+    padding: 15px; border-radius: 8px; font-size: 1.3rem; text-align: left;
+    transform: rotate(1deg); box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+  }
+  
+  .demo-note {
+    text-align: center; color: #64748b; font-size: 1.2rem; margin-top: 20px;
+  }
+
+  .trigger-badge {
+    display: inline-block; background: #334155; color: #38bdf8;
+    padding: 5px 15px; border-radius: 20px; font-size: 1.1rem;
+    font-family: monospace; margin-top: 15px; transform: rotate(1deg);
+  }
+
+  /* 對話泡泡樣式 */
+  .chat-container {
+    display: flex; flex-direction: column; gap: 15px; width: 100%;
+    padding: 20px; background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 20px;
+  }
+  .chat-bubble { 
+    padding: 10px 15px; font-size: 1.4rem; position: relative; width: fit-content; 
+    max-width: 90%; box-shadow: 2px 2px 0 rgba(0,0,0,0.05); 
+  }
+  .chat-me { 
+    align-self: flex-end; background: #e0f2fe; border: 2px solid #7dd3fc; border-radius: 15px 15px 5px 15px; 
+  }
+  .chat-ai { 
+    align-self: flex-start; background: #f0fdf4; border: 2px solid #86efac; border-radius: 15px 15px 15px 5px; 
+  }
+
+  /* 頁碼樣式 */
+  #page-indicator {
+    position: fixed; bottom: 20px; left: 30px; font-size: 1.5rem;
+    font-weight: bold; color: var(--ink); background: white;
+    padding: 5px 15px; border: 3px solid var(--ink);
+    border-radius: 10px 5px 10px 5px; transform: rotate(-2deg);
+    box-shadow: 3px 3px 0px rgba(0,0,0,0.1); z-index: 100;
+  }
+
+  .hint {
+    position: fixed; bottom: 20px; right: 30px; font-size: 1.2rem;
+    color: #64748b; font-family: sans-serif; background: white;
+    padding: 5px 15px; border: 2px dashed #cbd5e1; border-radius: 20px;
+    opacity: 0.5; z-index: 100;
+  }
+  .hint:hover { opacity: 1; }
+  .doodle { position: absolute; font-size: 3rem; opacity: 0.8; }
+</style>
+</head>
+<body>
+
+<div id="page-indicator">1 / 13</div>
+<div class="hint">按鍵盤 ⬅️ ➡️ 切換投影片</div>
+
+<div id="slider">
+
+  <!-- 1. 開場 -->
+  <div class="slide"><div class="sketchy-box">
+      <span class="doodle" style="top: -20px; left: -20px;">✨</span>
+      <h1>一張 <span class="hl-yellow">意見反映單</span>，<br>怎麼變成 GAS 自動化工作流？</h1>
+      <p style="text-align: center; color: #64748b; font-size: 1.5rem;">從紙本到戰情室的進化之旅 🚀</p>
+  </div></div>
+
+  <!-- 2. 痛點 -->
+  <div class="slide"><div class="sketchy-box">
+      <h1>真正的麻煩，不是「收到」...</h1>
+      <ul>
+        <li>資料亂飛：<br>
+          <span class="sticker">電話</span> 
+          <span class="sticker">紙本</span> 
+          <span class="sticker">LINE</span> 
+          <span class="sticker">Email</span> 
+          <span class="sticker">Google評論</span>
+        </li>
+        <li>這是一般建議，還是<span class="hl-pink">會爆炸的高風險客訴</span>？</li>
+        <li>寄出去之後，到底結案了沒？</li>
+        <li>主管問：現在總共幾件？我們答得出來嗎？ 😱</li>
+      </ul>
+  </div></div>
+
+  <!-- 3. 設計思維：6個問題對齊 -->
+  <div class="slide"><div class="sketchy-box">
+      <span class="doodle" style="bottom: 10px; right: -20px;">💡</span>
+      <h1>我第一個不是想寫程式，<br>而是先問：這流程哪裡卡住？</h1>
+      <ul style="margin-top: 30px;">
+        <li><span class="hl-yellow">哪裡</span> 一直在重複？</li>
+        <li><span class="hl-yellow">資料</span> 散在哪裡？</li>
+        <li>有沒有 <span class="hl-yellow">固定的判斷</span>？</li>
+        <li>發生事情時，要 <span class="hl-yellow">通知誰</span>？</li>
+        <li>寄出去後，<span class="hl-yellow">怎麼追蹤</span>？</li>
+        <li><span class="hl-yellow">主管最後</span> 想看什麼？</li>
+      </ul>
+  </div></div>
+
+  <!-- 4. Q1 重複的事 -->
+  <div class="slide"><div class="sketchy-box" style="text-align: center;">
+      <h2>Q1：哪裡一直重複？</h2>
+      <p>每次都在問家屬一樣的基本資料。</p>
+      <h1 style="margin: 30px 0;"><span class="hl-green">用 Google Form 統一入口</span></h1>
+      <div class="trigger-badge">⚙️ GAS 出場點：表單送出後，自動開始處理 <span style="font-size: 0.85rem; opacity: 0.8;">(onFormSubmit)</span></div>
+      <p class="demo-note">(💡 現場 Demo：填寫表單送出)</p>
+  </div></div>
+
+  <!-- 5. Q2 分散的資料 -->
+  <div class="slide"><div class="sketchy-box" style="text-align: center;">
+      <h2>Q2：資料散在哪裡？</h2>
+      <p>LINE、紙本、Email、電話，找資料像考古。</p>
+      <h1 style="margin: 30px 0;"><span class="hl-green">用 Google Sheet 集中管理</span></h1>
+      <p>以前是「找訊息」，現在是<span class="hl-yellow">「查案件」</span>。</p>
+      <p class="demo-note">(💡 現場 Demo：展示 Sheet 欄位自動匯入)</p>
+  </div></div>
+
+  <!-- 6. Q3 固定的判斷 -->
+  <div class="slide"><div class="sketchy-box" style="text-align: center;">
+      <h2>Q3：有沒有固定的判斷？</h2>
+      <h1 style="margin: 20px 0;"><span class="hl-green">讓 GAS 抓關鍵字自動亮燈</span></h1>
+      
+      <div style="display: flex; align-items: center; justify-content: center; gap: 40px; margin-top: 30px; flex-wrap: wrap;">
+          <div style="text-align: left; font-size: 1.8rem; line-height: 2.2;">
+              <div>「肯定、謝謝」 ➔ <b><span class="hl-green">🟢 綠燈</span></b></div>
+              <div>「提告、受傷」 ➔ <b><span class="hl-pink">🔴 紅燈</span></b></div>
+              <div>「其他建議」&nbsp;&nbsp;&nbsp;➔ <b><span class="hl-yellow">🟡 黃燈</span></b></div>
+          </div>
+          <div style="font-size: 3rem; color: #94a3b8;">➔</div>
+          <div>
+              <div class="code-block" style="font-size: 1.4rem; margin: 0; line-height: 1.6; min-width: 280px;">
+                  if (有肯定內容) { <br>
+                  &nbsp;&nbsp;綠燈; <br>
+                  } else if (有高風險) { <br>
+                  &nbsp;&nbsp;紅燈; <br>
+                  }
+              </div>
+              <p style="font-size: 1.1rem; color: #94a3b8; margin: 10px 0 0 0; text-align: right;">(💡 概念版，非實際程式碼)</p>
+          </div>
+      </div>
+  </div></div>
+
+  <!-- 7. AI 協作 -->
+  <div class="slide"><div class="sketchy-box" style="max-width: 1100px;">
+      <span class="doodle" style="top: -20px; right: 20px;">🤖</span>
+      <h2 style="text-align: center; display: block;">我不是手寫 GAS，我是這樣跟 AI 合作</h2>
+      
+      <div style="display: flex; gap: 40px; margin-top: 20px; align-items: stretch;">
+        <div style="flex: 1; display: flex; flex-direction: column;">
+          <h3 style="text-align: center; margin-bottom: 10px;">🔄 我們的工作分配</h3>
+          <div class="chat-container" style="flex: 1;">
+            <div class="chat-bubble chat-me">🙋‍♂️ <b>我負責：</b>講清楚流程</div>
+            <div class="chat-bubble chat-ai">🤖 <b>AI 負責：</b>翻成 GAS 程式</div>
+            <div class="chat-bubble chat-me">🙋‍♂️ <b>我負責：</b>貼上並測試結果</div>
+            <div class="chat-bubble chat-ai">🤖 <b>AI 負責：</b>根據報錯修正錯誤</div>
+          </div>
+        </div>
+        <div style="flex: 1.2; background: #1e293b; color: #f8fafc; padding: 25px; border-radius: 15px; box-shadow: 4px 4px 0px rgba(0,0,0,0.15); transform: rotate(1deg);">
+          <h3 style="color: #38bdf8; margin-top: 0; margin-bottom: 15px;">💬 我會這樣問 AI：</h3>
+          <div style="font-family: monospace; font-size: 1.25rem; line-height: 1.6; color: #e2e8f0;">
+            請幫我寫 Google Apps Script。<br><br>
+            表單送出後，讀取機構欄位與意見內容。<br>
+            如果內容有「提告、媒體、跌倒、受傷」，標成<span style="color:#fca5a5;">紅燈</span>並寄信給主管、社工、書記。<br>
+            如果有「肯定、謝謝」，標成<span style="color:#86efac;">綠燈</span>並寄感謝信。<br>
+            其他標成<span style="color:#fde047;">黃燈</span>。
+          </div>
+        </div>
+      </div>
+
+      <p style="text-align: center; font-size: 2rem; margin-top: 30px; color: #e11d48; font-weight: bold;">
+        最後留下 ➔ 一套真的跑得動的工作流 🚀
+      </p>
+  </div></div>
+
+  <!-- 8. Q4 通知誰 (全新排版) -->
+  <div class="slide"><div class="sketchy-box" style="max-width: 1000px;">
+      <h2 style="text-align: center; display: block;">Q4：發生事情時，要通知誰？</h2>
+
+      <!-- 燈號分流卡片 -->
+      <div style="display: flex; gap: 15px; margin-top: 25px; justify-content: center;">
+          <div style="flex: 1; background: #ecfdf5; border: 2px dashed #10b981; border-radius: 10px; padding: 15px; text-align: center;">
+              <div style="font-size: 2rem; margin-bottom: 10px;">🟢 綠燈</div>
+              <div style="font-size: 1.5rem; font-weight: bold; color: #047857;">主管</div>
+              <div style="font-size: 1.2rem; color: #065f46; margin-top: 5px;">(收到好評)</div>
+          </div>
+          <div style="flex: 1; background: #fefce8; border: 2px dashed #eab308; border-radius: 10px; padding: 15px; text-align: center;">
+              <div style="font-size: 2rem; margin-bottom: 10px;">🟡 黃燈</div>
+              <div style="font-size: 1.5rem; font-weight: bold; color: #a16207;">主管 + 社工 + 書記</div>
+              <div style="font-size: 1.2rem; color: #854d0e; margin-top: 5px;">(同步知悉)</div>
+          </div>
+          <div style="flex: 1; background: #fef2f2; border: 2px dashed #f43f5e; border-radius: 10px; padding: 15px; text-align: center;">
+              <div style="font-size: 2rem; margin-bottom: 10px;">🔴 紅燈</div>
+              <div style="font-size: 1.5rem; font-weight: bold; color: #be123c;">主管 + 社工 + 管理層</div>
+              <div style="font-size: 1.2rem; color: #9f1239; margin-top: 5px;">(危機通報)</div>
+          </div>
+      </div>
+
+      <!-- 正副主管同步 Highlight -->
+      <div style="background: #f8fafc; border-left: 6px solid #3b82f6; padding: 15px 20px; margin-top: 20px; font-size: 1.5rem; border-radius: 0 10px 10px 0;">
+          <span style="font-weight: bold; color: #1d4ed8;">👥 正副主管同步：</span><br>
+          <span style="color: #334155; font-size: 1.4rem;">現場阿長有正副互搭與支援關係，相關主管會一起收到信，避免交接或支援時資訊斷掉。</span>
+      </div>
+
+      <!-- 金句 -->
+      <div style="text-align: center; margin-top: 25px;">
+          <p style="font-size: 1.8rem; font-weight: bold; margin: 0;">「技術上是寄信，<br><span class="hl-pink">管理上是把現場分工變成自動通知規則</span>。」</p>
+          <div class="trigger-badge" style="margin-top: 15px;">⚙️ GAS 出場點：表單送出後，自動開始處理 <span style="font-size: 0.85rem; opacity: 0.8;">(onFormSubmit)</span></div>
+      </div>
+  </div></div>
+
+  <!-- 9. Q5 追蹤進度 -->
+  <div class="slide"><div class="sketchy-box">
+      <h2>Q5：寄出去以後，怎麼追蹤？</h2>
+      <ul style="margin-bottom: 20px;">
+        <li>⏳ 待處理 ➔ 🚧 處理中 ➔ ✅ 已結案</li>
+        <li><span class="hl-green">自動封存：</span>結案後系統自動收進倉庫。</li>
+        <li><span class="hl-yellow">誤改救援：</span>不小心改錯，還能搬回主表。</li>
+        <li><span class="hl-pink">手動變色：</span>手動改燈號，自動換底色。</li>
+      </ul>
+      <div style="text-align: center;">
+        <div class="trigger-badge">⚙️ GAS 出場點：表格修改後，自動觸發 <span style="font-size: 0.85rem; opacity: 0.8;">(onEdit)</span></div>
+        <p class="demo-note">(💡 現場 Demo：手動改結案、觸發自動搬移)</p>
+      </div>
+  </div></div>
+
+  <!-- 10. Q6 主管視角 -->
+  <div class="slide"><div class="sketchy-box" style="text-align: center;">
+      <h2>Q6：主管最後想看什麼？</h2>
+      <p>主管不想看 100 筆明細，只想知道：</p>
+      <p><b>紅燈幾件？待處理幾件？誰上榮譽榜？誰在警戒榜？</b></p>
+      <h1 style="margin: 30px 0;"><span class="hl-green">戰情室 ＋ 每天 17:00 自動日報</span></h1>
+      <div class="trigger-badge">⚙️ GAS 出場點：時間到了，自動執行 <span style="font-size: 0.85rem; opacity: 0.8;">(Time-driven)</span></div>
+      <p class="demo-note">(💡 現場 Demo：展示 Dashboard 與日報信件)</p>
+  </div></div>
+
+  <!-- 11. 五句金句總結 -->
+  <div class="slide"><div class="sketchy-box" style="width: 100%; max-width: 800px;">
+      <h1 style="text-align: center;">我們不是從程式開始，<br>而是從流程開始。</h1>
+      <ul class="flow-list" style="max-width: 500px; margin: 30px auto 0;">
+        <li><span>📝 重複的事</span> <span class="arrow">➔</span> <span class="hl-yellow">表單化</span></li>
+        <li><span>🗂️ 分散的資料</span> <span class="arrow">➔</span> <span class="hl-yellow">表格化</span></li>
+        <li><span>🧠 固定的判斷</span> <span class="arrow">➔</span> <span class="hl-yellow">規則化</span></li>
+        <li><span>📨 固定的通知</span> <span class="arrow">➔</span> <span class="hl-yellow">自動化</span></li>
+        <li><span>📊 主管看結果</span> <span class="arrow">➔</span> <span class="hl-yellow">報表化</span></li>
+      </ul>
+  </div></div>
+
+  <!-- 12. GAS 出場時機 -->
+  <div class="slide"><div class="sketchy-box">
+      <span class="doodle" style="bottom: 10px; right: -20px;">🧠</span>
+      <h1>所以，GAS 到底適合做什麼？</h1>
+      <p>忘記程式碼沒關係，只要記得剛剛提到的三個「時機」：</p>
+      <ul>
+        <li>👉 <span class="hl-yellow">表單送出時</span> (onFormSubmit)：自動分類、寄信</li>
+        <li>👉 <span class="hl-pink">表格修改時</span> (onEdit)：改變顏色、結案搬移</li>
+        <li>👉 <span class="hl-green">時間到了時</span> (Time-driven)：每天 17:00 寄報表</li>
+      </ul>
+  </div></div>
+
+  <!-- 13. 結語金句 -->
+  <div class="slide"><div class="sketchy-box" style="text-align: center;">
+      <span class="doodle" style="top: -20px; left: -20px;">🎯</span>
+      <h1>工具只是配角，你的流程才是靈魂</h1>
+      <p style="font-size: 2.2rem; margin-top: 30px;">不要為了自動化而硬找問題。</p>
+      <p style="font-size: 2.2rem;">先問<span class="hl-pink">「我們的工作哪裡重複、固定、容易漏」</span>。</p>
+      
+      <div style="background: #f0fdf4; border: 3px dashed #10b981; border-radius: 15px; padding: 20px; margin-top: 30px; display: inline-block; transform: rotate(-1deg); box-shadow: 4px 4px 0px rgba(16,185,129,0.1);">
+          <p style="font-size: 2.2rem; font-weight: bold; color: #047857; margin: 0; line-height: 1.6;">
+            流程想清楚後，<br>再請 AI 幫你翻成程式，<br>讓系統負責重複執行。
+          </p>
+      </div>
+  </div></div>
+
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const slider = document.getElementById('slider');
+  const pageIndicator = document.getElementById('page-indicator');
+
+  function updateSlide() {
+    slider.style.transform = `translateX(-${currentSlide * 100}vw)`;
+    pageIndicator.textContent = `${currentSlide + 1} / ${slides.length}`;
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' && currentSlide < slides.length - 1) {
+      currentSlide++;
+      updateSlide();
+    } else if (e.key === 'ArrowLeft' && currentSlide > 0) {
+      currentSlide--;
+      updateSlide();
+    }
+  });
+  
+  // 初始化頁碼
+  updateSlide();
+</script>
+
+</body>
+</html>
