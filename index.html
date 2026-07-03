@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>意見反映單流程拆解簡報</title>
+<title>意見反映單流程拆解簡報 (10頁濃縮版)</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Itim&family=Noto+Sans+TC:wght@400;700&display=swap');
 
@@ -31,11 +31,12 @@
 
   .slide {
     min-width: 100vw; height: 100vh; display: flex; flex-direction: column;
-    justify-content: center; align-items: center; padding: 50px; box-sizing: border-box;
+    justify-content: center; align-items: center; padding: 40px; box-sizing: border-box;
   }
 
+  /* 加寬 sketchy-box 以容納更豐富的排版 */
   .sketchy-box {
-    background: white; padding: 40px 60px; max-width: 950px; width: 90%;
+    background: white; padding: 35px 50px; max-width: 1150px; width: 95%;
     border: 3px solid var(--ink);
     border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
     box-shadow: 6px 6px 0px rgba(44, 62, 80, 0.15);
@@ -46,11 +47,11 @@
     transform: rotate(1deg); border-radius: 4% 3% 6% 2% / 2% 3% 1% 4%;
   }
 
-  h1 { font-size: 2.8rem; margin-top: 0; line-height: 1.3; text-align: center; }
-  h2 { font-size: 2rem; color: #475569; border-bottom: 3px dashed var(--highlight-yellow); display: inline-block; }
-  h3 { font-size: 1.6rem; color: #334155; margin-bottom: 10px; }
-  p, li { font-size: 1.6rem; line-height: 1.8; margin: 15px 0; }
-  ul, ol { padding-left: 30px; }
+  h1 { font-size: 2.6rem; margin-top: 0; line-height: 1.3; text-align: center; }
+  h2 { font-size: 1.8rem; color: #475569; border-bottom: 3px dashed var(--highlight-yellow); display: inline-block; margin: 10px 0; }
+  h3 { font-size: 1.5rem; color: #334155; margin-bottom: 10px; }
+  p, li { font-size: 1.4rem; line-height: 1.6; margin: 10px 0; }
+  ul, ol { padding-left: 25px; }
 
   .hl-yellow { background: linear-gradient(180deg, transparent 60%, var(--highlight-yellow) 40%); }
   .hl-pink { background: linear-gradient(180deg, transparent 60%, var(--highlight-pink) 40%); }
@@ -60,31 +61,32 @@
     display: inline-block; padding: 5px 15px; background: #ffecb3;
     border: 2px solid var(--ink); border-radius: 15px 5px 15px 5px;
     font-weight: bold; transform: rotate(-2deg);
-    margin-right: 5px;
-    margin-bottom: 10px;
+    margin-right: 5px; margin-bottom: 5px;
   }
-
-  .flow-list { list-style: none; padding: 0; margin-top: 20px; }
-  .flow-list li {
-    display: flex; justify-content: space-between; align-items: center;
-    border-bottom: 2px dashed var(--line); padding-bottom: 10px; margin-bottom: 15px;
-  }
-  .arrow { font-size: 2rem; color: #94a3b8; margin: 0 15px; }
 
   .code-block {
     background: #1e293b; color: #e2e8f0; font-family: monospace;
-    padding: 15px; border-radius: 8px; font-size: 1.3rem; text-align: left;
+    padding: 12px; border-radius: 8px; font-size: 1.1rem; text-align: left;
     transform: rotate(1deg); box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
   }
   
   .demo-note {
-    text-align: center; color: #64748b; font-size: 1.2rem; margin-top: 20px;
+    text-align: center; color: #64748b; font-size: 1.1rem; margin-top: 10px; font-weight: bold;
   }
 
   .trigger-badge {
-    display: inline-block; background: #334155; color: #38bdf8;
+    display: inline-block; background: #fffbeb; color: #b45309;
     padding: 5px 15px; border-radius: 20px; font-size: 1.1rem;
-    font-family: monospace; margin-top: 15px; transform: rotate(1deg);
+    font-weight: bold; border: 2px dashed #fcd34d; margin-top: 10px; transform: rotate(1deg);
+  }
+
+  /* 雙欄位排版用 */
+  .two-cols {
+    display: flex; gap: 30px; align-items: stretch; margin-top: 20px; width: 100%;
+  }
+  .col {
+    flex: 1; display: flex; flex-direction: column; background: #f8fafc;
+    border: 2px dashed #cbd5e1; border-radius: 15px; padding: 20px;
   }
 
   /* 頁碼樣式 */
@@ -108,342 +110,275 @@
 </head>
 <body>
 
-<div id="page-indicator">1 / 17</div>
+<div id="page-indicator">1 / 10</div>
 <div class="hint">按鍵盤 ⬅️ ➡️ 切換投影片</div>
 
 <div id="slider">
 
   <!-- 1. 開場 -->
-  <div class="slide"><div class="sketchy-box">
+  <div class="slide"><div class="sketchy-box" style="padding: 60px;">
       <span class="doodle" style="top: -20px; left: -20px;">✨</span>
-      <h1>一張 <span class="hl-yellow">意見反映單</span>，<br>怎麼讓 Google 自動幫你處理？</h1>
-      <p style="text-align: center; color: #64748b; font-size: 1.5rem;">從紙本到戰情室的進化之旅 🚀</p>
+      <h1 style="font-size: 3.5rem;">一張 <span class="hl-yellow">意見反映單</span>，<br>怎麼讓 Google 自動幫你處理？</h1>
+      <p style="text-align: center; color: #64748b; font-size: 1.8rem; margin-top: 30px;">從紙本到戰情室的進化之旅 🚀</p>
   </div></div>
 
-  <!-- 2. 痛點 -->
+  <!-- 2. 痛點與解法思路 -->
   <div class="slide"><div class="sketchy-box">
-      <h1>工作真正的麻煩，不是「收到」...</h1>
-      <ul>
-        <li>資料亂飛：<br>
-          <span class="sticker">電話</span> 
-          <span class="sticker">紙本</span> 
-          <span class="sticker">LINE</span> 
-          <span class="sticker">Email</span> 
-          <span class="sticker">Google評論</span>
-        </li>
-        <li>這是一般建議，還是<span class="hl-pink">會爆炸的高風險客訴</span>？</li>
-        <li>交接出去之後，到底結案了沒？</li>
-        <li>主管問：現在總共幾件？我們答得出來嗎？ 😱</li>
-      </ul>
+      <h1 style="margin-bottom: 20px;">在找工具之前，先看懂問題在哪裡</h1>
+      
+      <div class="two-cols">
+          <div class="col" style="background: #fef2f2; border-color: #fca5a5;">
+              <h2>💣 工作真正的麻煩...</h2>
+              <ul style="font-size: 1.3rem;">
+                <li>資料亂飛：<span class="sticker" style="font-size: 1rem;">電話</span><span class="sticker" style="font-size: 1rem;">紙本</span><span class="sticker" style="font-size: 1rem;">LINE</span>找資料像考古。</li>
+                <li>這是一般建議，還是<span class="hl-pink">會爆炸的高風險客訴</span>？</li>
+                <li>交接出去之後，到底結案了沒？</li>
+                <li>主管問總共幾件，我們答得出來嗎？ 😱</li>
+              </ul>
+          </div>
+          
+          <div class="col" style="background: #f0fdf4; border-color: #86efac;">
+              <h2>💡 所以我們先問 6 個問題：</h2>
+              <ul style="font-size: 1.4rem;">
+                <li><span class="hl-yellow">哪裡</span> 一直在重複？</li>
+                <li><span class="hl-yellow">資料</span> 散在哪裡？</li>
+                <li>有沒有 <span class="hl-yellow">固定的判斷規則</span>？</li>
+                <li>發生事情時，要 <span class="hl-yellow">通知誰</span>？</li>
+                <li>收到以後，<span class="hl-yellow">怎麼追蹤進度</span>？</li>
+                <li><span class="hl-yellow">主管最後</span> 想看什麼結果？</li>
+              </ul>
+          </div>
+      </div>
   </div></div>
 
-  <!-- 3. 先問流程 -->
-  <div class="slide"><div class="sketchy-box">
-      <span class="doodle" style="bottom: 10px; right: -20px;">💡</span>
-      <h1>在找工具之前，我們先來問：</h1>
-      <ul style="margin-top: 30px;">
-        <li><span class="hl-yellow">哪裡</span> 一直在重複？</li>
-        <li><span class="hl-yellow">資料</span> 散在哪裡？</li>
-        <li>有沒有 <span class="hl-yellow">固定的判斷</span>？</li>
-        <li>發生事情時，要 <span class="hl-yellow">通知誰</span>？</li>
-        <li>收到以後，<span class="hl-yellow">怎麼追蹤進度</span>？</li>
-        <li><span class="hl-yellow">主管最後</span> 想看什麼結果？</li>
-      </ul>
-  </div></div>
-
-  <!-- 4. Google 有很多工具 -->
+  <!-- 3. Google 部門與爆點提問 -->
   <div class="slide"><div class="sketchy-box" style="text-align: center;">
       <span class="doodle" style="top: -20px; right: -10px;">🏢</span>
-      <h1>其實，Google 就像一間<span class="hl-yellow">大公司</span></h1>
-      <p>裡面有很多不同的「部門」為你服務：</p>
-      <div style="display: flex; justify-content: space-around; margin-top: 40px; font-size: 1.5rem; flex-wrap: wrap; gap: 20px;">
-        <div class="sticker" style="font-size: 1.8rem; padding: 15px 25px;">📝 表單部<br><span style="font-size: 1.2rem; font-weight: normal; color: #475569;">(Google Form)</span></div>
-        <div class="sticker" style="font-size: 1.8rem; padding: 15px 25px; background: #dcfce7;">📊 報表部<br><span style="font-size: 1.2rem; font-weight: normal; color: #475569;">(Google Sheet)</span></div>
-        <div class="sticker" style="font-size: 1.8rem; padding: 15px 25px; background: #fee2e2;">✉️ 郵發部<br><span style="font-size: 1.2rem; font-weight: normal; color: #475569;">(Gmail)</span></div>
-        <div class="sticker" style="font-size: 1.8rem; padding: 15px 25px; background: #e0f2fe;">📄 文書部<br><span style="font-size: 1.2rem; font-weight: normal; color: #475569;">(Google Docs)</span></div>
-        <div class="sticker" style="font-size: 1.8rem; padding: 15px 25px; background: #f3e8ff;">📁 檔案室<br><span style="font-size: 1.2rem; font-weight: normal; color: #475569;">(Google Drive)</span></div>
-      </div>
-      <p style="margin-top: 40px; color: #64748b; font-size: 1.4rem;">(只要有 Google 帳號，這些部門都在等你差遣！)</p>
-  </div></div>
-
-  <!-- 5. 爆點提問 (新增) -->
-  <div class="slide"><div class="sketchy-box" style="text-align: center;">
-      <span class="doodle" style="top: -20px; right: -20px;">❓</span>
-      <h1 style="margin-bottom: 50px;">大家猜猜看...</h1>
+      <h1 style="margin-bottom: 20px;">Google 就像一間大公司，但...</h1>
       
-      <div style="font-size: 2.2rem; line-height: 2.5; color: #334155; text-align: left; display: inline-block;">
-          <div>📝 Google Form 會自己寄信嗎？ ➔ <b><span class="hl-pink">不會。</span></b></div>
-          <div>📊 Google Sheet 會自己通知主管嗎？ ➔ <b><span class="hl-pink">不會。</span></b></div>
+      <!-- 部門列 -->
+      <div style="display: flex; justify-content: space-around; margin-bottom: 30px; font-size: 1.3rem; flex-wrap: wrap; gap: 10px;">
+        <div class="sticker" style="padding: 10px 20px;">📝 表單部 <br><span style="font-size: 1rem; color: #475569;">(Form)</span></div>
+        <div class="sticker" style="padding: 10px 20px; background: #dcfce7;">📊 報表部 <br><span style="font-size: 1rem; color: #475569;">(Sheet)</span></div>
+        <div class="sticker" style="padding: 10px 20px; background: #fee2e2;">✉️ 郵發部 <br><span style="font-size: 1rem; color: #475569;">(Gmail)</span></div>
+        <div class="sticker" style="padding: 10px 20px; background: #e0f2fe;">📄 文書部 <br><span style="font-size: 1rem; color: #475569;">(Docs)</span></div>
+        <div class="sticker" style="padding: 10px 20px; background: #f3e8ff;">📁 檔案室 <br><span style="font-size: 1rem; color: #475569;">(Drive)</span></div>
       </div>
-      
-      <div style="margin-top: 50px;">
-          <h2 style="font-size: 2.2rem; color: #0f172a; border-bottom: none; background: #fef08a; padding: 15px 30px; border-radius: 10px; transform: rotate(-1deg); display: inline-block; box-shadow: 4px 4px 0 rgba(0,0,0,0.1);">
-              所以，中間是不是需要一個人，<br>負責叫大家起床工作？
-          </h2>
-      </div>
-  </div></div>
 
-  <!-- 6. GAS 主角登場 -->
-  <div class="slide"><div class="sketchy-box" style="text-align: center;">
-      <span class="doodle" style="top: -20px; left: -20px;">🧠</span>
-      <h1>GAS 主角登場：<br><span class="hl-green">Google 的總務主任 (大腦)</span></h1>
-      <p>部門之間平常是不講話的。<br>這時，我們需要一個 <b>大腦</b> 來指揮大家：</p>
-      
-      <div style="background: #e2e8f0; border-radius: 15px; padding: 30px; margin-top: 30px; display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
-         <div style="font-size: 2.5rem; display: flex; flex-direction: column; align-items: center;">📝 <span style="font-size: 1.2rem; font-weight: bold; margin-top: 5px;">有人填表單</span></div>
-         <div style="font-size: 2rem; color: #94a3b8;">➔</div>
-         <div style="background: #1e293b; color: white; padding: 15px 25px; border-radius: 10px; font-size: 2rem; transform: rotate(-2deg); box-shadow: 4px 4px 0px rgba(0,0,0,0.2);">
-            🧠 <span style="color: #38bdf8;">GAS</span> (大腦)<br>
-            <span style="font-size:1.1rem; color: #94a3b8; font-weight: normal;">收到通知</span>
-         </div>
-         <div style="font-size: 2rem; color: #94a3b8;">➔</div>
-         <div style="font-size: 2.5rem; display: flex; flex-direction: column; align-items: center;">📊 <span style="font-size: 1.2rem; font-weight: bold; margin-top: 5px;">叫 Sheet 存檔</span></div>
-         <div style="font-size: 2rem; color: #94a3b8;">➔</div>
-         <div style="font-size: 2.5rem; display: flex; flex-direction: column; align-items: center;">✉️ <span style="font-size: 1.2rem; font-weight: bold; margin-top: 5px;">叫 Gmail 寄信</span></div>
-      </div>
-      <p style="font-size: 1.8rem; margin-top: 30px; font-weight: bold; color: #047857;">GAS 不負責打雜，它負責「把工具串起來工作」！</p>
-  </div></div>
-
-  <!-- 7. Trigger -->
-  <div class="slide"><div class="sketchy-box" style="text-align: center;">
-      <span class="doodle" style="bottom: 10px; left: -20px;">⏰</span>
-      <h1 style="margin-bottom: 10px;">這個大腦什麼時候「起床工作」？</h1>
-      <h2 style="font-size: 1.6rem; margin-top: 0;">這叫做「觸發時機」 (Trigger)</h2>
-      
-      <ul style="list-style: none; padding: 0; margin-top: 15px; display: flex; flex-direction: column; gap: 12px; text-align: left; max-width: 650px; margin-inline: auto;">
-        <li style="background: #f8fafc; padding: 12px 25px; border-radius: 10px; border: 2px solid #cbd5e1; display: flex; align-items: center; gap: 15px;">
-          <span style="font-size: 2.5rem;">📨</span>
-          <div>
-            <div style="font-size: 1.5rem; font-weight: bold;">有人送出表單時，起床工作</div>
-            <div style="font-size: 1.1rem; color: #64748b; margin-top: 3px;">(GAS Trigger 名稱：onFormSubmit)</div>
+      <!-- 提問爆點 -->
+      <div style="background: #f8fafc; padding: 25px; border-radius: 15px; border: 2px dashed #94a3b8; margin-top: 20px;">
+          <h2 style="font-size: 2rem; border-bottom: none; color: #1e293b; margin: 0 0 15px 0;">大家猜猜看... ❓</h2>
+          <div style="font-size: 1.6rem; line-height: 2; color: #334155; display: inline-block; text-align: left;">
+              <div>📝 Google Form 會自己寄信嗎？ ➔ <b><span class="hl-pink">不會。</span></b></div>
+              <div>📊 Google Sheet 會自己通知主管嗎？ ➔ <b><span class="hl-pink">不會。</span></b></div>
           </div>
-        </li>
-        <li style="background: #f8fafc; padding: 12px 25px; border-radius: 10px; border: 2px solid #cbd5e1; display: flex; align-items: center; gap: 15px;">
-          <span style="font-size: 2.5rem;">📊</span>
-          <div>
-            <div style="font-size: 1.5rem; font-weight: bold;">有人修改表格時，起床工作</div>
-            <div style="font-size: 1.1rem; color: #64748b; margin-top: 3px;">(GAS Trigger 名稱：onEdit)</div>
-          </div>
-        </li>
-        <li style="background: #f8fafc; padding: 12px 25px; border-radius: 10px; border: 2px solid #cbd5e1; display: flex; align-items: center; gap: 15px;">
-          <span style="font-size: 2.5rem;">⏰</span>
-          <div>
-            <div style="font-size: 1.5rem; font-weight: bold;">每天下午五點時，起床工作</div>
-            <div style="font-size: 1.1rem; color: #64748b; margin-top: 3px;">(GAS Trigger 名稱：Time-driven)</div>
-          </div>
-        </li>
-      </ul>
-  </div></div>
-
-  <!-- 8. AI 在哪裡 -->
-  <div class="slide"><div class="sketchy-box" style="text-align: center;">
-      <span class="doodle" style="top: -20px; right: 20px;">🤖</span>
-      <h1>那 AI 在哪裡？<br><span class="hl-green">它是你的專屬翻譯！</span></h1>
-      
-      <div style="display: flex; align-items: center; justify-content: center; gap: 30px; margin-top: 50px;">
-         <div style="text-align: center; flex: 1;">
-            <div style="font-size: 4rem;">🙋‍♂️</div>
-            <h3 style="margin: 10px 0;">我</h3>
-            <p style="font-size: 1.3rem; margin: 0; line-height: 1.4;">用白話文<br>描述工作流程</p>
-         </div>
-         <div style="font-size: 2.5rem; color: #94a3b8;">➔</div>
-         <div style="text-align: center; flex: 1; background: #f0fdf4; padding: 20px; border-radius: 15px; border: 2px dashed #4ade80;">
-            <div style="font-size: 4rem;">🤖</div>
-            <h3 style="margin: 10px 0;">AI 助理</h3>
-            <p style="font-size: 1.3rem; margin: 0; line-height: 1.4;">幫我把想法<br>翻成 GAS 指令</p>
-         </div>
-         <div style="font-size: 2.5rem; color: #94a3b8;">➔</div>
-         <div style="text-align: center; flex: 1;">
-            <div style="font-size: 4rem;">🧠</div>
-            <h3 style="margin: 10px 0;">GAS</h3>
-            <p style="font-size: 1.3rem; margin: 0; line-height: 1.4;">指揮 Google 工具<br>開始執行</p>
-         </div>
-      </div>
-      <div style="margin-top: 40px; font-size: 2.2rem; font-weight: bold; color: #e11d48;">
-        總結：你講流程 ➔ AI 翻譯 ➔ GAS 執行。
-      </div>
-  </div></div>
-
-  <!-- 9. 案例 Q1 -->
-  <div class="slide"><div class="sketchy-box" style="text-align: center;">
-      <h2>Q1：哪裡一直重複？</h2>
-      <p>每次都在問家屬一樣的基本資料。</p>
-      <h1 style="margin: 30px 0;"><span class="hl-green">用 Google Form 統一入口</span></h1>
-      <div class="trigger-badge" style="background: #fffbeb; color: #b45309; border: 2px dashed #fcd34d; font-family: inherit; font-size: 1.3rem;">
-        🧠 觸發時機：表單一送出，GAS 就醒來接手處理
-      </div>
-      <p class="demo-note">(💡 現場 Demo：填寫意見反映表單送出)</p>
-  </div></div>
-
-  <!-- 10. 案例 Q2 -->
-  <div class="slide"><div class="sketchy-box" style="text-align: center;">
-      <h2>Q2：資料散在哪裡？</h2>
-      <p>LINE、紙本、Email、電話，找資料像考古。</p>
-      <h1 style="margin: 30px 0;"><span class="hl-green">讓 GAS 自動把資料收進 Sheet</span></h1>
-      <p>以前是痛苦「找訊息」，現在是輕鬆<span class="hl-yellow">「查案件」</span>。</p>
-      <p class="demo-note">(💡 現場 Demo：展示 Sheet 欄位自動匯入)</p>
-  </div></div>
-
-  <!-- 11. 案例 Q3 -->
-  <div class="slide"><div class="sketchy-box" style="text-align: center;">
-      <h2>Q3：有沒有固定的判斷？</h2>
-      <h1 style="margin: 20px 0;"><span class="hl-green">交給 GAS 自動抓關鍵字亮燈</span></h1>
-      
-      <div style="display: flex; align-items: center; justify-content: center; gap: 40px; margin-top: 30px; flex-wrap: wrap;">
-          <div style="text-align: left; font-size: 1.8rem; line-height: 2.2;">
-              <div>「肯定、謝謝」 ➔ <b><span class="hl-green">🟢 綠燈</span></b></div>
-              <div>「提告、受傷」 ➔ <b><span class="hl-pink">🔴 紅燈</span></b></div>
-              <div>「其他建議」&nbsp;&nbsp;&nbsp;➔ <b><span class="hl-yellow">🟡 黃燈</span></b></div>
-          </div>
-          <div style="font-size: 3rem; color: #94a3b8;">➔</div>
-          <div>
-              <div class="code-block" style="font-size: 1.4rem; margin: 0; line-height: 1.6; min-width: 280px;">
-                  // 🧠 GAS 按照你的規則判斷<br>
-                  如果 (看到肯定內容) { <br>
-                  &nbsp;&nbsp;亮綠燈; <br>
-                  } 否則如果 (看到高風險) { <br>
-                  &nbsp;&nbsp;亮紅燈; <br>
-                  }
-              </div>
-              <p style="font-size: 1.2rem; color: #64748b; margin-top: 10px; text-align: left; line-height: 1.5;">(💡 放心，這不是要大家手寫！<br>你以後看到 AI 產出的程式，大概就是長這樣。)</p>
+          <div style="margin-top: 20px;">
+              <h2 style="font-size: 1.8rem; background: #fef08a; padding: 10px 20px; border-radius: 10px; transform: rotate(-1deg); display: inline-block; box-shadow: 4px 4px 0 rgba(0,0,0,0.1); border-bottom: none;">
+                  所以，中間是不是需要一個人，負責叫大家起床工作？
+              </h2>
           </div>
       </div>
   </div></div>
 
-  <!-- 12. 案例 Q4 -->
-  <div class="slide"><div class="sketchy-box" style="max-width: 1000px;">
-      <h2 style="text-align: center; display: block;">Q4：發生事情時，要通知誰？</h2>
-
-      <!-- 燈號分流卡片 -->
-      <div style="display: flex; gap: 15px; margin-top: 25px; justify-content: center;">
-          <div style="flex: 1; background: #ecfdf5; border: 2px dashed #10b981; border-radius: 10px; padding: 15px; text-align: center;">
-              <div style="font-size: 2rem; margin-bottom: 10px;">🟢 綠燈</div>
-              <div style="font-size: 1.5rem; font-weight: bold; color: #047857;">主管</div>
-              <div style="font-size: 1.2rem; color: #065f46; margin-top: 5px;">(收到好評)</div>
-          </div>
-          <div style="flex: 1; background: #fefce8; border: 2px dashed #eab308; border-radius: 10px; padding: 15px; text-align: center;">
-              <div style="font-size: 2rem; margin-bottom: 10px;">🟡 黃燈</div>
-              <div style="font-size: 1.5rem; font-weight: bold; color: #a16207;">主管 + 社工 + 書記</div>
-              <div style="font-size: 1.2rem; color: #854d0e; margin-top: 5px;">(同步知悉)</div>
-          </div>
-          <div style="flex: 1; background: #fef2f2; border: 2px dashed #f43f5e; border-radius: 10px; padding: 15px; text-align: center;">
-              <div style="font-size: 2rem; margin-bottom: 10px;">🔴 紅燈</div>
-              <div style="font-size: 1.5rem; font-weight: bold; color: #be123c;">主管 + 社工 + 管理層</div>
-              <div style="font-size: 1.2rem; color: #9f1239; margin-top: 5px;">(危機通報)</div>
-          </div>
-      </div>
-
-      <!-- 金句 -->
-      <div style="text-align: center; margin-top: 25px;">
-          <p style="font-size: 1.8rem; font-weight: bold; margin: 0;">「工具上是寄信，<br><span class="hl-pink">管理上是把現場分工變成自動通知規則</span>。」</p>
-          <div class="trigger-badge" style="margin-top: 15px; background: #fffbeb; color: #b45309; border: 2px dashed #fcd34d; font-family: inherit; font-size: 1.3rem;">
-            🧠 觸發時機：GAS 判斷完燈號後，自動叫 Gmail 寄信
-          </div>
-      </div>
-  </div></div>
-
-  <!-- 13. 案例 Q5 -->
+  <!-- 4. GAS 大腦與觸發時機 -->
   <div class="slide"><div class="sketchy-box">
-      <h2>Q5：收到以後，怎麼追蹤進度？</h2>
-      <ul style="margin-bottom: 20px;">
-        <li>進度分三階：⏳ 待處理 ➔ 🚧 處理中 ➔ ✅ 已結案</li>
-        <li><span class="hl-green">自動封存：</span>結案後 GAS 自動幫你收進倉庫。</li>
-        <li><span class="hl-yellow">誤改救援：</span>不小心改錯，還能搬回主表。</li>
-        <li><span class="hl-pink">手動變色：</span>你手動改燈號，GAS 自動幫你換底色。</li>
-      </ul>
-      <div style="text-align: center;">
-        <div class="trigger-badge" style="margin-top: 15px; background: #fffbeb; color: #b45309; border: 2px dashed #fcd34d; font-family: inherit; font-size: 1.3rem;">
-            🧠 觸發時機：有人修改表格，GAS 就發現並自動整理
-        </div>
-        <p class="demo-note">(💡 現場 Demo：手動改結案、觸發自動搬移)</p>
+      <span class="doodle" style="top: -20px; left: -20px;">🧠</span>
+      <h1 style="text-align: center;">主角登場：GAS 總務主任 (大腦)</h1>
+      
+      <div class="two-cols">
+          <!-- 左欄：大腦工作 -->
+          <div class="col" style="justify-content: center; align-items: center; background: #e2e8f0; border: none;">
+             <div style="font-size: 1.8rem;">📝 有人填表單</div>
+             <div style="font-size: 2rem; color: #94a3b8; margin: 5px 0;">⬇️</div>
+             <div style="background: #1e293b; color: white; padding: 15px 25px; border-radius: 10px; font-size: 1.8rem; transform: rotate(-2deg); box-shadow: 4px 4px 0px rgba(0,0,0,0.2); text-align: center;">
+                🧠 <span style="color: #38bdf8;">GAS 大腦</span><br>
+                <span style="font-size:1rem; color: #94a3b8;">把工具串起來工作</span>
+             </div>
+             <div style="font-size: 2rem; color: #94a3b8; margin: 5px 0;">⬇️</div>
+             <div style="font-size: 1.8rem;">📊 存檔 ＋ ✉️ 寄信</div>
+          </div>
+          
+          <!-- 右欄：Trigger -->
+          <div class="col" style="justify-content: center; gap: 15px;">
+              <h3 style="margin-top: 0; text-align: center; font-size: 1.6rem; color: #047857;">⏰ 大腦什麼時候「起床」？ (觸發時機)</h3>
+              <div style="background: white; padding: 10px 15px; border-radius: 10px; border: 2px solid #cbd5e1; display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 2rem;">📨</span>
+                <div>
+                  <div style="font-size: 1.3rem; font-weight: bold;">有人送出表單時</div>
+                  <div style="font-size: 0.9rem; color: #64748b;">(Trigger 名稱：onFormSubmit)</div>
+                </div>
+              </div>
+              <div style="background: white; padding: 10px 15px; border-radius: 10px; border: 2px solid #cbd5e1; display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 2rem;">📊</span>
+                <div>
+                  <div style="font-size: 1.3rem; font-weight: bold;">有人修改表格時</div>
+                  <div style="font-size: 0.9rem; color: #64748b;">(Trigger 名稱：onEdit)</div>
+                </div>
+              </div>
+              <div style="background: white; padding: 10px 15px; border-radius: 10px; border: 2px solid #cbd5e1; display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 2rem;">⏰</span>
+                <div>
+                  <div style="font-size: 1.3rem; font-weight: bold;">每天下午五點時</div>
+                  <div style="font-size: 0.9rem; color: #64748b;">(Trigger 名稱：Time-driven)</div>
+                </div>
+              </div>
+          </div>
       </div>
   </div></div>
 
-  <!-- 14. 案例 Q6 -->
-  <div class="slide"><div class="sketchy-box" style="text-align: center;">
-      <h2>Q6：主管最後想看什麼？</h2>
-      <p>主管不想看 100 筆明細，只想知道：</p>
-      <p><b>紅燈幾件？待處理幾件？誰上榮譽榜？誰在警戒榜？</b></p>
-      <h1 style="margin: 30px 0;"><span class="hl-green">戰情室 ＋ 每天自動發送日報</span></h1>
-      <div class="trigger-badge" style="margin-top: 15px; background: #fffbeb; color: #b45309; border: 2px dashed #fcd34d; font-family: inherit; font-size: 1.3rem;">
-        🧠 觸發時機：下午五點一到，GAS 自動產出報表並寄出
-      </div>
-      <p class="demo-note">(💡 現場 Demo：展示 Dashboard 與日報信件)</p>
-  </div></div>
-
-  <!-- 15. GAS 能做什麼 (全新排版：指揮中心結構) -->
-  <div class="slide"><div class="sketchy-box" style="text-align: center; max-width: 1100px; padding: 40px 50px;">
-      <span class="doodle" style="top: -20px; left: -20px;">🕸️</span>
-      <h1 style="margin-bottom: 10px;">所以，GAS 到底可以幫你做什麼？</h1>
-      <p style="margin-bottom: 30px; font-size: 1.8rem; color: #475569;">GAS 就是 Google Workspace 的 <b class="hl-yellow" style="font-weight: bold;">流程引擎</b></p>
+  <!-- 5. AI 在哪裡 -->
+  <div class="slide"><div class="sketchy-box" style="text-align: center; padding: 60px;">
+      <span class="doodle" style="top: -20px; right: 20px;">🤖</span>
+      <h1 style="font-size: 3rem;">那 AI 在哪裡？<br><span class="hl-green">它是你的專屬翻譯！</span></h1>
       
-      <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 15px;">
-          
-          <!-- 左側：接收訊號 (Input) -->
-          <div style="flex: 1; background: #f8fafc; border: 3px dashed #cbd5e1; border-radius: 20px; padding: 25px 20px; display: flex; flex-direction: column; justify-content: center; transform: rotate(-1deg);">
-              <div style="font-size: 1.6rem; font-weight: bold; color: #64748b; margin-bottom: 15px;">📥 1. 接收訊號 (Trigger)</div>
-              <div style="display: flex; flex-direction: column; gap: 15px;">
-                  <div style="background: white; border: 2px solid #94a3b8; padding: 12px; border-radius: 10px; font-size: 1.8rem; font-weight: bold; color: #334155; box-shadow: 3px 3px 0 #e2e8f0;">📝 填寫表單</div>
-                  <div style="background: white; border: 2px solid #94a3b8; padding: 12px; border-radius: 10px; font-size: 1.8rem; font-weight: bold; color: #334155; box-shadow: 3px 3px 0 #e2e8f0;">💬 收到 LINE</div>
-              </div>
-          </div>
-
-          <!-- 箭頭 -->
-          <div style="font-size: 3rem; color: #cbd5e1; font-weight: bold;">➔</div>
-
-          <!-- 核心：GAS 大腦 (Process) -->
-          <div style="background: #1e293b; color: white; padding: 30px 40px; border-radius: 25px; text-align: center; box-shadow: 6px 6px 0px rgba(0,0,0,0.2); transform: rotate(2deg); border: 3px solid #38bdf8;">
-              <div style="font-size: 5rem; line-height: 1.2;">🧠</div>
-              <div style="font-size: 2rem; font-weight: bold; color: #38bdf8;">GAS 大腦</div>
-          </div>
-
-          <!-- 箭頭 -->
-          <div style="font-size: 3rem; color: #cbd5e1; font-weight: bold;">➔</div>
-
-          <!-- 右側：派發任務 (Output) -->
-          <div style="flex: 1.5; background: #f0fdf4; border: 3px dashed #86efac; border-radius: 20px; padding: 25px 20px; transform: rotate(-1deg);">
-              <div style="font-size: 1.6rem; font-weight: bold; color: #059669; margin-bottom: 15px;">📤 2. 派發任務 (Action)</div>
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                  <div style="background: white; border: 2px solid #4ade80; padding: 15px 10px; border-radius: 10px; font-size: 1.6rem; font-weight: bold; color: #064e3b; box-shadow: 3px 3px 0 #dcfce7;">📊 更新表格</div>
-                  <div style="background: white; border: 2px solid #f87171; padding: 15px 10px; border-radius: 10px; font-size: 1.6rem; font-weight: bold; color: #7f1d1d; box-shadow: 3px 3px 0 #fee2e2;">✉️ 自動寄信</div>
-                  <div style="background: white; border: 2px solid #38bdf8; padding: 15px 10px; border-radius: 10px; font-size: 1.6rem; font-weight: bold; color: #0c4a6e; box-shadow: 3px 3px 0 #e0f2fe;">📄 產出文件</div>
-                  <div style="background: white; border: 2px solid #c084fc; padding: 15px 10px; border-radius: 10px; font-size: 1.6rem; font-weight: bold; color: #4c1d95; box-shadow: 3px 3px 0 #f3e8ff;">📁 歸檔雲端</div>
-              </div>
-          </div>
-          
+      <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 40px;">
+         <div style="text-align: center; flex: 1;">
+            <div style="font-size: 4.5rem;">🙋‍♂️</div><h3 style="font-size: 1.8rem; margin: 10px 0;">我</h3>
+            <p style="font-size: 1.4rem;">講白話文流程</p>
+         </div>
+         <div style="font-size: 3rem; color: #94a3b8;">➔</div>
+         <div style="text-align: center; flex: 1.2; background: #f0fdf4; padding: 20px; border-radius: 15px; border: 3px dashed #4ade80;">
+            <div style="font-size: 4.5rem;">🤖</div><h3 style="font-size: 1.8rem; margin: 10px 0;">AI 助理</h3>
+            <p style="font-size: 1.4rem; font-weight: bold;">幫我把想法<br>翻成 GAS 指令</p>
+         </div>
+         <div style="font-size: 3rem; color: #94a3b8;">➔</div>
+         <div style="text-align: center; flex: 1;">
+            <div style="font-size: 4.5rem;">🧠</div><h3 style="font-size: 1.8rem; margin: 10px 0;">GAS</h3>
+            <p style="font-size: 1.4rem;">指揮 Google 執行</p>
+         </div>
       </div>
-      
-      <p style="font-size: 1.5rem; color: #64748b; margin-top: 30px; margin-bottom: 0; font-weight: bold;">
-        只要把兩邊連起來，中間的苦工 GAS 全包了！
+      <p style="margin-top: 40px; font-size: 2rem; font-weight: bold; color: #e11d48;">
+        總結：你講流程 ➔ AI 翻譯 ➔ GAS 執行。
       </p>
   </div></div>
 
-  <!-- 16. 流程總結 -->
-  <div class="slide"><div class="sketchy-box" style="width: 100%; max-width: 800px;">
-      <h1 style="text-align: center;">我們不是從寫程式開始，<br>而是從梳理流程開始。</h1>
-      <ul class="flow-list" style="max-width: 500px; margin: 30px auto 0;">
-        <li><span>📝 重複的事</span> <span class="arrow">➔</span> <span class="hl-yellow">表單化</span></li>
-        <li><span>🗂️ 分散的資料</span> <span class="arrow">➔</span> <span class="hl-yellow">表格化</span></li>
-        <li><span>🧠 固定的判斷</span> <span class="arrow">➔</span> <span class="hl-yellow">規則化</span></li>
-        <li><span>📨 固定的通知</span> <span class="arrow">➔</span> <span class="hl-yellow">自動化</span></li>
-        <li><span>📊 主管看結果</span> <span class="arrow">➔</span> <span class="hl-yellow">報表化</span></li>
-      </ul>
+  <!-- 6. 案例開始：資料怎麼收？ -->
+  <div class="slide"><div class="sketchy-box">
+      <h1 style="text-align: center; margin-bottom: 20px;">案例開始：資料怎麼收？</h1>
+      
+      <div class="two-cols">
+          <div class="col">
+              <h2 style="margin-top: 0;">Q1：哪裡一直重複？</h2>
+              <p>每次都在問家屬一樣的基本資料。</p>
+              <h3 style="margin-top: 20px; font-size: 1.8rem; text-align: center;"><span class="hl-green">✅ 用 Form 統一入口</span></h3>
+              <div style="text-align: center;">
+                  <div class="trigger-badge">🧠 觸發：表單一送出，GAS 就醒來</div>
+                  <p class="demo-note">(💡 現場 Demo：填寫表單)</p>
+              </div>
+          </div>
+          
+          <div class="col">
+              <h2 style="margin-top: 0;">Q2：資料散在哪裡？</h2>
+              <p>LINE、紙本找資料像考古。</p>
+              <h3 style="margin-top: 20px; font-size: 1.8rem; text-align: center;"><span class="hl-green">✅ 自動收進 Sheet 集中</span></h3>
+              <p style="text-align: center; margin-top: 10px;">以前痛苦找訊息 ➔ 現在輕鬆<span class="hl-yellow">查案件</span>。</p>
+              <p class="demo-note">(💡 現場 Demo：欄位自動匯入)</p>
+          </div>
+      </div>
   </div></div>
 
-  <!-- 17. 結尾 -->
-  <div class="slide"><div class="sketchy-box" style="text-align: center;">
-      <span class="doodle" style="top: -20px; left: -20px;">🎯</span>
-      <h1>今天不是學程式，<br><span class="hl-yellow">是學怎麼讓 Google 幫你工作！</span></h1>
+  <!-- 7. 收到之後，怎麼判斷？ -->
+  <div class="slide"><div class="sketchy-box">
+      <h1 style="text-align: center; margin-bottom: 15px;">收到之後，怎麼判斷？</h1>
       
-      <div style="background: #f0fdf4; border: 3px dashed #10b981; border-radius: 15px; padding: 30px 40px; margin-top: 30px; display: inline-block; transform: rotate(-1deg); box-shadow: 4px 4px 0px rgba(16,185,129,0.1); text-align: left;">
-          <ol style="font-size: 2rem; font-weight: bold; color: #047857; margin: 0; line-height: 1.8; padding-left: 25px;">
+      <div class="two-cols" style="gap: 20px;">
+          <!-- 左：判斷 -->
+          <div class="col" style="flex: 1.2;">
+              <h2 style="margin-top: 0;">Q3：固定的判斷？ (GAS 抓關鍵字亮燈)</h2>
+              <div style="display: flex; gap: 15px; margin-top: 10px; align-items: center;">
+                  <div style="font-size: 1.3rem; line-height: 1.8;">
+                      <div>「肯定」 ➔ <b>🟢 綠</b></div>
+                      <div>「提告」 ➔ <b>🔴 紅</b></div>
+                      <div>「其他」 ➔ <b>🟡 黃</b></div>
+                  </div>
+                  <div class="code-block" style="flex: 1; font-size: 0.95rem;">
+                      如果 (有肯定內容) { 亮綠燈; }<br>否則如果 (有高風險) { 亮紅燈; }
+                  </div>
+              </div>
+              <p style="font-size: 1rem; color: #64748b; margin-top: 5px;">(💡 放心不是要你手寫，AI 產出的指令大概長這樣)</p>
+          </div>
+          
+          <!-- 右：通知 -->
+          <div class="col" style="flex: 1;">
+              <h2 style="margin-top: 0;">Q4：要通知誰？ (依燈號寄信)</h2>
+              <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
+                  <div style="background: #ecfdf5; border: 1px dashed #10b981; padding: 8px; border-radius: 8px;">🟢 <b style="color:#047857;">主管</b> (好評)</div>
+                  <div style="background: #fefce8; border: 1px dashed #eab308; padding: 8px; border-radius: 8px;">🟡 <b style="color:#a16207;">主管+社工+書記</b></div>
+                  <div style="background: #fef2f2; border: 1px dashed #f43f5e; padding: 8px; border-radius: 8px;">🔴 <b style="color:#be123c;">主管+社工+管理層</b> (危機)</div>
+              </div>
+              <div style="text-align: center;">
+                  <div class="trigger-badge">🧠 觸發：GAS 判斷完自動寄信</div>
+              </div>
+          </div>
+      </div>
+  </div></div>
+
+  <!-- 8. 最後怎麼追蹤？ -->
+  <div class="slide"><div class="sketchy-box">
+      <h1 style="text-align: center; margin-bottom: 20px;">最後怎麼追蹤？</h1>
+      
+      <div class="two-cols">
+          <div class="col">
+              <h2 style="margin-top: 0;">Q5：怎麼追蹤進度？</h2>
+              <ul style="font-size: 1.3rem;">
+                <li>狀態：⏳ 待處理 ➔ 🚧 處理中 ➔ ✅ 已結案</li>
+                <li><span class="hl-green">自動封存：</span>結案後自動收進倉庫表。</li>
+                <li><span class="hl-pink">手動變色：</span>改燈號，自動換底色。</li>
+              </ul>
+              <div style="text-align: center;">
+                  <div class="trigger-badge">🧠 觸發：修改表格時 (onEdit)</div>
+                  <p class="demo-note">(💡 現場 Demo：觸發自動搬移)</p>
+              </div>
+          </div>
+          
+          <div class="col">
+              <h2 style="margin-top: 0;">Q6：主管最後想看什麼？</h2>
+              <p>主管不想看明細，只想看紅燈有幾件？</p>
+              <h3 style="margin-top: 15px; font-size: 1.8rem; text-align: center;"><span class="hl-green">✅ 戰情室＋每天自動日報</span></h3>
+              <div style="text-align: center;">
+                  <div class="trigger-badge">🧠 觸發：每天下午五點 (Time-driven)</div>
+                  <p class="demo-note">(💡 現場 Demo：展示 Dashboard)</p>
+              </div>
+          </div>
+      </div>
+  </div></div>
+
+  <!-- 9. 原來，我今天做的事情，其實都長一樣。 -->
+  <div class="slide"><div class="sketchy-box" style="text-align: center; padding: 50px;">
+      <span class="doodle" style="top: -20px; left: -20px;">🧩</span>
+      <h1 style="margin-bottom: 30px;">原來，我今天做的事情，其實都長一樣。</h1>
+
+      <div style="display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap; margin: 40px 0;">
+          <div style="background: #f8fafc; border: 3px solid #94a3b8; padding: 20px 30px; border-radius: 15px; font-size: 2.2rem; font-weight: bold; color: #334155; transform: rotate(-2deg); box-shadow: 4px 4px 0 #e2e8f0;">📥 收資料</div>
+          <div style="font-size: 3rem; color: #cbd5e1;">➔</div>
+          <div style="background: #f0fdf4; border: 3px solid #4ade80; padding: 20px 30px; border-radius: 15px; font-size: 2.2rem; font-weight: bold; color: #064e3b; transform: rotate(1deg); box-shadow: 4px 4px 0 #dcfce7;">🧠 判斷</div>
+          <div style="font-size: 3rem; color: #cbd5e1;">➔</div>
+          <div style="background: #fffbeb; border: 3px solid #fcd34d; padding: 20px 30px; border-radius: 15px; font-size: 2.2rem; font-weight: bold; color: #b45309; transform: rotate(-1deg); box-shadow: 4px 4px 0 #fef3c7;">✉️ 通知</div>
+          <div style="font-size: 3rem; color: #cbd5e1;">➔</div>
+          <div style="background: #e0f2fe; border: 3px solid #38bdf8; padding: 20px 30px; border-radius: 15px; font-size: 2.2rem; font-weight: bold; color: #0c4a6e; transform: rotate(2deg); box-shadow: 4px 4px 0 #bae6fd;">🔎 追蹤</div>
+          <div style="font-size: 3rem; color: #cbd5e1;">➔</div>
+          <div style="background: #f3e8ff; border: 3px solid #c084fc; padding: 20px 30px; border-radius: 15px; font-size: 2.2rem; font-weight: bold; color: #4c1d95; transform: rotate(-2deg); box-shadow: 4px 4px 0 #e9d5ff;">📊 報表</div>
+      </div>
+
+      <p style="font-size: 2.4rem; font-weight: bold; color: #e11d48; margin-top: 50px;">
+          原來每一個流程，都可以這樣拆！
+      </p>
+  </div></div>
+
+  <!-- 10. 結尾 -->
+  <div class="slide"><div class="sketchy-box" style="text-align: center; padding: 50px;">
+      <span class="doodle" style="top: -20px; left: -20px;">🎯</span>
+      <h1 style="font-size: 3rem;">今天不是學程式，<br><span class="hl-yellow">是學怎麼讓 Google 幫你工作！</span></h1>
+      
+      <div style="background: #f0fdf4; border: 3px dashed #10b981; border-radius: 15px; padding: 30px 40px; margin-top: 40px; display: inline-block; transform: rotate(-1deg); box-shadow: 4px 4px 0px rgba(16,185,129,0.1); text-align: left;">
+          <ol style="font-size: 1.8rem; font-weight: bold; color: #047857; margin: 0; line-height: 2; padding-left: 25px;">
             <li>Google 本來就有許多免費工具。</li>
             <li><span class="hl-yellow">GAS 是大腦</span>，負責把工具串聯起來。</li>
             <li><span class="hl-pink">你只要講清楚流程，AI 會幫你翻譯</span>，<br>讓 Google 自己完成工作！</li>
           </ol>
       </div>
       
-      <p style="font-size: 1.6rem; margin-top: 40px; color: #64748b; font-weight: bold;">(👇 等等你會發現，我們今天沒有寫多少程式，反而大部分時間都在設計流程！)</p>
+      <p style="font-size: 1.8rem; margin-top: 40px; color: #64748b; font-weight: bold;">(👇 等等你會發現，我們今天沒有寫多少程式，<br>反而大部分時間都在設計流程！)</p>
   </div></div>
 
 </div>
