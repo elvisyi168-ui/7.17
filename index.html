@@ -30,7 +30,7 @@
   }
 
   .slide {
-    min-width: 100vw; height: 100vh; display: flex; flex-direction: column;
+    flex: 0 0 100vw; width: 100vw; height: 100vh; display: flex; flex-direction: column;
     justify-content: center; align-items: center; padding: 40px; box-sizing: border-box;
   }
 
@@ -96,7 +96,6 @@
   }
   .arrow { font-size: 2rem; color: #94a3b8; margin: 0 15px; }
 
-  /* 實戰卡片專屬樣式 (Papaya 風格) */
   .action-card {
     background: white; border: 3px solid #64748b; border-radius: 12px;
     padding: 15px; display: flex; flex-direction: column; gap: 10px;
@@ -580,64 +579,7 @@ setupDailyTrigger()
       </div>
   </div></div>
 
-  <!-- 10. 流程總結 -->
-  <div class="slide"><div class="sketchy-box" style="text-align: center; padding: 40px 50px;">
-      <span class="doodle" style="top: -20px; left: -20px;">🧩</span>
-      <h1 style="margin-bottom: 10px;">原來，每個流程都可以這樣拆！</h1>
-
-      <!-- 橫向流程圖 -->
-      <div style="display: flex; justify-content: center; align-items: center; gap: 6px; flex-wrap: wrap; margin: 20px 0;">
-          <div style="background: #f8fafc; border: 2px solid #94a3b8; padding: 8px 10px; border-radius: 8px; font-weight: bold; font-size: 1.1rem;">📝 Form<br>收資料</div>
-          <div style="color: #cbd5e1; font-weight: bold;">➔</div>
-          <div style="background: #f0fdf4; border: 2px solid #4ade80; padding: 8px 10px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; color: #064e3b;">🤖 S1: Gemini<br>整理舊資料</div>
-          <div style="color: #cbd5e1; font-weight: bold;">➔</div>
-          <div style="background: #e0f2fe; border: 2px solid #38bdf8; padding: 8px 10px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; color: #0c4a6e;">🧠 S2: GAS<br>處理新資料</div>
-          <div style="color: #cbd5e1; font-weight: bold;">➔</div>
-          <div style="background: #e0f2fe; border: 2px solid #38bdf8; padding: 8px 10px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; color: #0c4a6e;">🧠 S3: GAS<br>自動寄信</div>
-          <div style="color: #cbd5e1; font-weight: bold;">➔</div>
-          <div style="background: #f0fdf4; border: 2px solid #4ade80; padding: 8px 10px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; color: #064e3b;">🤖 S4A: Gemini<br>建立 Dashboard</div>
-          <div style="color: #cbd5e1; font-weight: bold;">➔</div>
-          <div style="background: #e0f2fe; border: 2px solid #38bdf8; padding: 8px 10px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; color: #0c4a6e;">🧠 S4B: GAS<br>寄送日報</div>
-          <div style="color: #cbd5e1; font-weight: bold;">➔</div>
-          <div style="background: #f3e8ff; border: 2px solid #c084fc; padding: 8px 10px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; color: #4c1d95;">🌐 S5: HTML<br>網站查詢</div>
-      </div>
-
-      <!-- 核心思維 -->
-      <div style="background: #f8fafc; border: 3px dashed #cbd5e1; border-radius: 20px; padding: 15px 40px; margin-top: 15px; display: inline-block; text-align: left; transform: rotate(1deg);">
-          <ul class="flow-list" style="margin: 0; min-width: 450px;">
-              <li style="margin-bottom: 5px; padding-bottom: 5px;"><span style="font-size: 1.5rem; font-weight: bold;">📝 重複的事</span> <span class="arrow" style="font-size: 1.5rem;">➔</span> <span class="hl-yellow" style="font-size: 1.6rem; font-weight: bold;">表單化</span></li>
-              <li style="margin-bottom: 5px; padding-bottom: 5px;"><span style="font-size: 1.5rem; font-weight: bold;">🗂️ 分散的資料</span> <span class="arrow" style="font-size: 1.5rem;">➔</span> <span class="hl-yellow" style="font-size: 1.6rem; font-weight: bold;">表格化</span></li>
-              <li style="margin-bottom: 5px; padding-bottom: 5px;"><span style="font-size: 1.5rem; font-weight: bold;">🧠 固定的判斷</span> <span class="arrow" style="font-size: 1.5rem;">➔</span> <span class="hl-yellow" style="font-size: 1.6rem; font-weight: bold;">規則化</span></li>
-              <li style="margin-bottom: 5px; padding-bottom: 5px;"><span style="font-size: 1.5rem; font-weight: bold;">📨 固定的通知</span> <span class="arrow" style="font-size: 1.5rem;">➔</span> <span class="hl-yellow" style="font-size: 1.6rem; font-weight: bold;">自動化</span></li>
-              <li style="margin-bottom: 5px; padding-bottom: 5px;"><span style="font-size: 1.5rem; font-weight: bold;">📊 主管看結果</span> <span class="arrow" style="font-size: 1.5rem;">➔</span> <span class="hl-yellow" style="font-size: 1.6rem; font-weight: bold;">報表化</span></li>
-              <li style="margin-bottom: 0px; padding-bottom: 0; border-bottom: none;"><span style="font-size: 1.5rem; font-weight: bold;">🔍 不同角色查資料</span> <span class="arrow" style="font-size: 1.5rem;">➔</span> <span class="hl-yellow" style="font-size: 1.6rem; font-weight: bold;">網頁化</span></li>
-          </ul>
-      </div>
-
-      <p style="font-size: 1.8rem; font-weight: bold; color: #e11d48; margin-top: 15px; margin-bottom: 0; background: #ffe4e6; padding: 10px; border-radius: 10px;">
-          先用 Gemini 建立，再用 GAS 讓流程持續運作。
-      </p>
-  </div></div>
-
-  <!-- 11. 結尾 -->
-  <div class="slide"><div class="sketchy-box" style="text-align: center; padding: 50px;">
-      <span class="doodle" style="top: -20px; left: -20px;">🎯</span>
-      <h1 style="font-size: 3rem;">今天不是學程式，<br><span class="hl-yellow">是學怎麼讓 Google 幫你工作！</span></h1>
-      
-      <div style="background: #f0fdf4; border: 3px dashed #10b981; border-radius: 15px; padding: 30px 40px; margin-top: 30px; display: inline-block; transform: rotate(-1deg); box-shadow: 4px 4px 0px rgba(16,185,129,0.1); text-align: left;">
-          <ol style="font-size: 1.8rem; font-weight: bold; color: #047857; margin: 0; line-height: 2; padding-left: 25px;">
-            <li><span class="hl-yellow">Gemini 可以直接協助</span>整理目前的 Sheet。</li>
-            <li><span class="hl-pink">GAS 負責未來</span>持續、自動、無人操作地執行。</li>
-            <li>AI 幫你產生程式，但<span class="hl-yellow">觸發器、授權與測試仍需要人工完成</span>。</li>
-          </ol>
-      </div>
-      
-      <p style="font-size: 1.8rem; margin-top: 40px; color: #be123c; font-weight: bold; background: #fff1f2; padding: 15px; border-radius: 10px; display: inline-block; border: 2px solid #fda4af;">
-        真正重要的不是會背程式碼，而是能把工作流程說清楚。
-      </p>
-  </div></div>
-
-  <!-- 12. 彩蛋：Stage 5 -->
+  <!-- 10. 彩蛋：Stage 5 -->
   <div class="slide"><div class="sketchy-box" style="text-align: center; padding: 40px 50px;">
       <span class="doodle" style="top: -20px; right: -10px;">🥚</span>
       <h1 style="font-size: 2.5rem; margin-bottom: 20px;">🎉 Stage 5｜把 GAS 變成主管查詢網站</h1>
@@ -761,6 +703,104 @@ Index.html 要貼在哪裡。
       </p>
   </div></div>
 
+  <!-- 11. 流程總結 -->
+  <div class="slide"><div class="sketchy-box" style="text-align: center; padding: 40px 50px;">
+      <span class="doodle" style="top: -20px; left: -20px;">🧩</span>
+      <h1 style="margin-bottom: 10px;">原來，每個流程都可以這樣拆！</h1>
+
+      <!-- 橫向流程圖 -->
+      <div style="display: flex; justify-content: center; align-items: center; gap: 6px; flex-wrap: wrap; margin: 20px 0;">
+          <div style="background: #f8fafc; border: 2px solid #94a3b8; padding: 8px 10px; border-radius: 8px; font-weight: bold; font-size: 1.1rem;">📝 Form<br>收資料</div>
+          <div style="color: #cbd5e1; font-weight: bold;">➔</div>
+          <div style="background: #f0fdf4; border: 2px solid #4ade80; padding: 8px 10px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; color: #064e3b;">🤖 S1: Gemini<br>整理舊資料</div>
+          <div style="color: #cbd5e1; font-weight: bold;">➔</div>
+          <div style="background: #e0f2fe; border: 2px solid #38bdf8; padding: 8px 10px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; color: #0c4a6e;">🧠 S2: GAS<br>處理新資料</div>
+          <div style="color: #cbd5e1; font-weight: bold;">➔</div>
+          <div style="background: #e0f2fe; border: 2px solid #38bdf8; padding: 8px 10px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; color: #0c4a6e;">🧠 S3: GAS<br>自動寄信</div>
+          <div style="color: #cbd5e1; font-weight: bold;">➔</div>
+          <div style="background: #f0fdf4; border: 2px solid #4ade80; padding: 8px 10px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; color: #064e3b;">🤖 S4A: Gemini<br>建立 Dashboard</div>
+          <div style="color: #cbd5e1; font-weight: bold;">➔</div>
+          <div style="background: #e0f2fe; border: 2px solid #38bdf8; padding: 8px 10px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; color: #0c4a6e;">🧠 S4B: GAS<br>寄送日報</div>
+          <div style="color: #cbd5e1; font-weight: bold;">➔</div>
+          <div style="background: #f3e8ff; border: 2px solid #c084fc; padding: 8px 10px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; color: #4c1d95;">🌐 S5: HTML<br>網站查詢</div>
+      </div>
+
+      <!-- 核心思維 -->
+      <div style="background: #f8fafc; border: 3px dashed #cbd5e1; border-radius: 20px; padding: 15px 40px; margin-top: 15px; display: inline-block; text-align: left; transform: rotate(1deg);">
+          <ul class="flow-list" style="margin: 0; min-width: 450px;">
+              <li style="margin-bottom: 5px; padding-bottom: 5px;"><span style="font-size: 1.5rem; font-weight: bold;">📝 重複的事</span> <span class="arrow" style="font-size: 1.5rem;">➔</span> <span class="hl-yellow" style="font-size: 1.6rem; font-weight: bold;">表單化</span></li>
+              <li style="margin-bottom: 5px; padding-bottom: 5px;"><span style="font-size: 1.5rem; font-weight: bold;">🗂️ 分散的資料</span> <span class="arrow" style="font-size: 1.5rem;">➔</span> <span class="hl-yellow" style="font-size: 1.6rem; font-weight: bold;">表格化</span></li>
+              <li style="margin-bottom: 5px; padding-bottom: 5px;"><span style="font-size: 1.5rem; font-weight: bold;">🧠 固定的判斷</span> <span class="arrow" style="font-size: 1.5rem;">➔</span> <span class="hl-yellow" style="font-size: 1.6rem; font-weight: bold;">規則化</span></li>
+              <li style="margin-bottom: 5px; padding-bottom: 5px;"><span style="font-size: 1.5rem; font-weight: bold;">📨 固定的通知</span> <span class="arrow" style="font-size: 1.5rem;">➔</span> <span class="hl-yellow" style="font-size: 1.6rem; font-weight: bold;">自動化</span></li>
+              <li style="margin-bottom: 5px; padding-bottom: 5px;"><span style="font-size: 1.5rem; font-weight: bold;">📊 主管看結果</span> <span class="arrow" style="font-size: 1.5rem;">➔</span> <span class="hl-yellow" style="font-size: 1.6rem; font-weight: bold;">報表化</span></li>
+              <li style="margin-bottom: 0px; padding-bottom: 0; border-bottom: none;"><span style="font-size: 1.5rem; font-weight: bold;">🔍 不同角色查資料</span> <span class="arrow" style="font-size: 1.5rem;">➔</span> <span class="hl-yellow" style="font-size: 1.6rem; font-weight: bold;">網頁化</span></li>
+          </ul>
+      </div>
+
+      <p style="font-size: 1.8rem; font-weight: bold; color: #e11d48; margin-top: 15px; margin-bottom: 0; background: #ffe4e6; padding: 10px; border-radius: 10px;">
+          先用 Gemini 建立，再用 GAS 讓流程持續運作。
+      </p>
+  </div></div>
+
+  <!-- 12. 結尾 -->
+  <div class="slide"><div class="sketchy-box" style="text-align: center; padding: 50px;">
+      <span class="doodle" style="top: -20px; left: -20px;">🎯</span>
+      <h1 style="font-size: 3rem;">今天不是學程式，<br><span class="hl-yellow">是學怎麼讓 Google 幫你工作！</span></h1>
+      
+      <div style="background: #f0fdf4; border: 3px dashed #10b981; border-radius: 15px; padding: 30px 40px; margin-top: 30px; display: inline-block; transform: rotate(-1deg); box-shadow: 4px 4px 0px rgba(16,185,129,0.1); text-align: left;">
+          <ol style="font-size: 1.8rem; font-weight: bold; color: #047857; margin: 0; line-height: 2; padding-left: 25px;">
+            <li><span class="hl-yellow">Gemini 可以直接協助</span>整理目前的 Sheet。</li>
+            <li><span class="hl-pink">GAS 負責未來</span>持續、自動、無人操作地執行。</li>
+            <li>AI 幫你產生程式，但<span class="hl-yellow">觸發器、授權與測試仍需要人工完成</span>。</li>
+          </ol>
+      </div>
+      
+      <p style="font-size: 1.8rem; margin-top: 40px; color: #be123c; font-weight: bold; background: #fff1f2; padding: 15px; border-radius: 10px; display: inline-block; border: 2px solid #fda4af;">
+        真正重要的不是會背程式碼，而是能把工作流程說清楚。
+      </p>
+  </div></div>
+
+  <!-- 13. 加碼分享：與 AI 討論流程的起手式 -->
+  <div class="slide"><div class="sketchy-box">
+      <span class="doodle" style="top: -20px; left: -20px;">💡</span>
+      <h1 style="text-align: center; margin-bottom: 20px;">課後錦囊｜先不寫程式，先跟 AI <span class="hl-green">聊流程</span></h1>
+      
+      <p style="font-size: 1.6rem; text-align: center; color: #334155; margin-bottom: 20px; font-weight: bold;">
+          回去以後，試著把以下這段話貼給 Gemini，開始你們的第一次流程健檢！
+      </p>
+      
+      <div class="action-card" style="margin: 0 auto; max-width: 900px; box-shadow: 6px 6px 0px rgba(74, 222, 128, 0.2); border-color: #4ade80;">
+          <div class="ac-header" style="color: #064e3b; border-bottom: 2px dashed #86efac;">🤖 AI 流程顧問召喚語 (Prompt)</div>
+          
+          <div style="margin: 15px 0 10px;">
+              <button class="btn-ui btn-copy" onclick="copyPrompt('p-bonus', this)" style="background: #059669;">📋 一鍵複製 Prompt</button>
+          </div>
+          
+          <!-- 注意這裡不用 hidden 類別，預設就是展開讓學員直接看清楚 -->
+          <div id="p-bonus" style="background: #1e293b; color: #e2e8f0; font-family: monospace; font-size: 1.2rem; padding: 20px; border-radius: 10px; white-space: pre-wrap; text-align: left; line-height: 1.6; max-height: 400px; overflow-y: auto;">你是一位流程改善顧問與 Google Workspace 自動化專家。
+我會描述目前公司的工作流程。
+請不要直接寫程式。
+
+請先協助我分析：
+1. 目前流程有哪些步驟？
+2. 哪些步驟最耗費人力？
+3. 哪些步驟最容易出錯？
+4. 哪些步驟適合交給 AI 協助？
+5. 哪些步驟適合使用 Google Apps Script 自動化？
+6. 哪些步驟適合使用 Google Form、Google Sheet、Google Drive、Gmail 等 Google 工具整合？
+7. 請依照「開發難度」及「效益」排序，建議最適合的開發順序。
+8. 最後請畫出改善前與改善後的流程圖。
+
+請不要直接寫程式，先幫我把問題想清楚。</div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 25px;">
+          <p style="font-size: 1.5rem; font-weight: bold; color: #0c4a6e; background: #e0f2fe; padding: 15px 25px; border-radius: 15px; display: inline-block; border: 2px dashed #38bdf8; transform: rotate(1deg);">
+            「想清楚」永遠比「寫出程式碼」更重要。祝大家自動化順利！ 🎉
+          </p>
+      </div>
+  </div></div>
+
 </div>
 
 <script>
@@ -768,19 +808,38 @@ Index.html 要貼在哪裡。
   const slides = document.querySelectorAll('.slide');
   const slider = document.getElementById('slider');
   const pageIndicator = document.getElementById('page-indicator');
+  
+  // 新增：動畫狀態鎖定，防止連續按鍵導致畫面卡在兩頁中間
+  let isAnimating = false;
 
   function updateSlide() {
     slider.style.transform = `translateX(-${currentSlide * 100}vw)`;
     pageIndicator.textContent = `${currentSlide + 1} / ${slides.length}`;
+    
+    // 啟動動畫鎖定，0.5秒（配合 CSS transition）後解除
+    isAnimating = true;
+    setTimeout(() => {
+      isAnimating = false;
+    }, 500);
   }
 
   window.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight' && currentSlide < slides.length - 1) {
-      currentSlide++;
-      updateSlide();
-    } else if (e.key === 'ArrowLeft' && currentSlide > 0) {
-      currentSlide--;
-      updateSlide();
+    // 只針對左右方向鍵進行處理
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+      
+      // 修復 1：阻擋瀏覽器預設的焦點行為或水平滾動
+      e.preventDefault(); 
+      
+      // 修復 2：如果還在翻頁動畫中，忽略此次按鍵，防止連按錯亂
+      if (isAnimating) return; 
+
+      if (e.key === 'ArrowRight' && currentSlide < slides.length - 1) {
+        currentSlide++;
+        updateSlide();
+      } else if (e.key === 'ArrowLeft' && currentSlide > 0) {
+        currentSlide--;
+        updateSlide();
+      }
     }
   });
 
