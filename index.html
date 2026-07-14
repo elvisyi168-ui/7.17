@@ -775,12 +775,13 @@ Index.html 要貼在哪裡。
       <div class="action-card" style="margin: 0 auto; max-width: 900px; box-shadow: 6px 6px 0px rgba(74, 222, 128, 0.2); border-color: #4ade80;">
           <div class="ac-header" style="color: #064e3b; border-bottom: 2px dashed #86efac;">🤖 AI 流程顧問召喚語 (Prompt)</div>
           
-          <div style="margin: 15px 0 10px;">
-              <button class="btn-ui btn-copy" onclick="copyPrompt('p-bonus', this)" style="background: #059669;">📋 一鍵複製 Prompt</button>
-          </div>
-          
-          <!-- 注意這裡不用 hidden 類別，預設就是展開讓學員直接看清楚 -->
-          <div id="p-bonus" style="background: #1e293b; color: #e2e8f0; font-family: monospace; font-size: 1.2rem; padding: 20px; border-radius: 10px; white-space: pre-wrap; text-align: left; line-height: 1.6; max-height: 400px; overflow-y: auto;">你是一位流程改善顧問與 Google Workspace 自動化專家。
+          <div class="ac-prompt-ui" style="margin-top: 15px; border-color: #86efac; background: #f0fdf4;">
+              <div style="margin-bottom: 5px;">
+                  <button class="btn-ui toggle-btn" onclick="togglePrompt('p-bonus')">👁️ 展開/收合 Prompt</button>
+                  <button class="btn-ui btn-copy" onclick="copyPrompt('p-bonus', this)" style="background: #059669;">📋 一鍵複製 Prompt</button>
+              </div>
+              
+              <div id="p-bonus" class="prompt-content hidden" style="font-size: 1.2rem; line-height: 1.5; padding: 15px; max-height: 300px;">你是一位流程改善顧問與 Google Workspace 自動化專家。
 我會描述目前公司的工作流程。
 請不要直接寫程式。
 
@@ -795,6 +796,7 @@ Index.html 要貼在哪裡。
 8. 最後請畫出改善前與改善後的流程圖。
 
 請不要直接寫程式，先幫我把問題想清楚。</div>
+          </div>
       </div>
       
       <div style="text-align: center; margin-top: 25px;">
