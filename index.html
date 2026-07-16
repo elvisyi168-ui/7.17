@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>意見反映單流程拆解簡報 (12頁實戰版)</title>
+<title>意見反映單流程拆解簡報 (濃縮實戰版)</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Itim&family=Noto+Sans+TC:wght@400;700&display=swap');
 
@@ -99,25 +99,25 @@
   .action-card {
     background: white; border: 3px solid #64748b; border-radius: 12px;
     padding: 15px; display: flex; flex-direction: column; gap: 10px;
-    box-shadow: 4px 4px 0 #cbd5e1; flex: 1;
+    box-shadow: 4px 4px 0 #cbd5e1; flex: 1; width: 100%;
   }
   .ac-header { font-size: 1.5rem; font-weight: bold; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 5px; }
   .ac-tool { font-size: 1.2rem; font-weight: bold; color: #047857; background: #dcfce7; padding: 5px 10px; border-radius: 6px; display: inline-block; }
   .ac-tool.gas { color: #0369a1; background: #e0f2fe; }
-  .ac-tool.form { color: #7e22ce; background: #f3e8ff; }
   .ac-prompt-ui { background: #f1f5f9; padding: 10px; border-radius: 8px; border: 1px dashed #94a3b8; }
   .btn-ui { background: #1e293b; color: white; border: none; padding: 5px 12px; border-radius: 6px; cursor: pointer; font-size: 1.1rem; font-family: inherit; margin-right: 5px; font-weight: bold; }
   .btn-ui:hover { background: #334155; }
   .btn-copy { background: #b45309; }
   .btn-copy:hover { background: #d97706; }
-  .prompt-content { display: none; background: #1e293b; color: #e2e8f0; font-family: monospace; font-size: 1rem; padding: 10px; border-radius: 6px; margin-top: 10px; white-space: pre-wrap; text-align: left; max-height: 150px; overflow-y: auto; }
+  
+  .prompt-content { display: none; background: #1e293b; color: #e2e8f0; font-family: monospace; font-size: 1rem; padding: 10px; border-radius: 6px; margin-top: 10px; white-space: pre-wrap; text-align: left; max-height: 250px; overflow-y: auto; line-height: 1.4; }
   .ac-result { font-size: 1.2rem; font-weight: bold; color: #334155; background: #f8fafc; padding: 8px; border-radius: 6px; border-left: 4px solid #facc15; }
   .ac-next { font-size: 1.2rem; color: #be123c; background: #fff1f2; padding: 10px; border-radius: 8px; font-weight: bold; border: 1px dashed #fca5a5; margin-top: auto; }
 </style>
 </head>
 <body>
 
-<div id="page-indicator">1 / 12</div>
+<div id="page-indicator">1 / 13</div>
 <div class="hint">按鍵盤 ⬅️ ➡️ 切換投影片</div>
 
 <div id="slider">
@@ -166,7 +166,7 @@
                 <li>⑥ <span class="hl-yellow">主管最後</span> 想看什麼結果？</li>
               </ul>
               <div style="margin-top: auto; text-align: center; font-size: 1.3rem; font-weight: bold; color: #047857; background: #dcfce7; padding: 10px; border-radius: 8px;">
-                🎯 今天我們會把這六個問題，實際拆成五個 Stage。
+                🎯 今天我們會把這六個問題，實際拆成四個階段。
               </div>
           </div>
       </div>
@@ -203,7 +203,7 @@
   <!-- 4. GAS 大腦與觸發時機 -->
   <div class="slide"><div class="sketchy-box">
       <span class="doodle" style="top: -20px; left: -20px;">🧠</span>
-      <h1 style="text-align: center;">主角登場：GAS 總務主任 (大腦)</h1>
+      <h1 style="text-align: center;">主角登場：GAS 自動化總務主任 (大腦)</h1>
       
       <div class="two-cols">
           <div class="col" style="justify-content: center; gap: 15px;">
@@ -269,7 +269,7 @@
       
       <div style="margin-top: 15px;">
           <p style="font-size: 1.8rem; font-weight: bold; color: #e11d48; background: #fef2f2; padding: 10px 20px; border-radius: 12px; display: inline-block; box-shadow: 3px 3px 0 rgba(252,165,165,0.4);">
-            眼前這張表要整理，用 Gemini；未來每一筆都要自己處理，用 GAS。
+            眼前這張表要整理，用 Gemini；未來每一筆都要自動處理，交給 GAS。
           </p>
       </div>
   </div></div>
@@ -284,9 +284,8 @@
           <div class="col" style="background: #f0fdf4; border-color: #4ade80;">
               <h2 style="text-align: center; color: #064e3b; border-bottom: 3px dashed #4ade80; margin-top: 0;">【 🤖 Gemini 專區 】</h2>
               <ul style="font-size: 1.5rem; line-height: 2.2; color: #1e293b; list-style: none; padding-left: 10px; font-weight: bold;">
-                <li><span style="background: #86efac; padding: 2px 8px; border-radius: 4px; margin-right: 5px;">Stage 1</span> 整理目前 Sheet</li>
-                <li><span style="background: #86efac; padding: 2px 8px; border-radius: 4px; margin-right: 5px;">Stage 4A</span> 建立戰情儀表板</li>
-                <li style="margin-top: 10px; font-size: 1.2rem; color: #475569;">✔ 直接操作欄位與格式</li>
+                <li><span style="background: #86efac; padding: 2px 8px; border-radius: 4px; margin-right: 5px;">Stage 1</span> 整理表格與建立戰情室</li>
+                <li style="margin-top: 10px; font-size: 1.2rem; color: #475569;">✔ 直接操作目前欄位與格式</li>
                 <li style="font-size: 1.2rem; color: #475569;">✔ 自動寫入公式與生成圖表</li>
               </ul>
           </div>
@@ -295,37 +294,94 @@
           <div class="col" style="background: #e0f2fe; border-color: #38bdf8;">
               <h2 style="text-align: center; color: #0c4a6e; border-bottom: 3px dashed #38bdf8; margin-top: 0;">【 🧠 GAS 專區 】</h2>
               <ul style="font-size: 1.5rem; line-height: 2.2; color: #1e293b; list-style: none; padding-left: 10px; font-weight: bold;">
-                <li><span style="background: #7dd3fc; padding: 2px 8px; border-radius: 4px; margin-right: 5px;">Stage 2</span> 新表單自動處理</li>
-                <li><span style="background: #7dd3fc; padding: 2px 8px; border-radius: 4px; margin-right: 5px;">Stage 3</span> Email 自動通知</li>
-                <li><span style="background: #7dd3fc; padding: 2px 8px; border-radius: 4px; margin-right: 5px;">Stage 4B</span> 每日五點寄報表</li>
-                <li><span style="background: #7dd3fc; padding: 2px 8px; border-radius: 4px; margin-right: 5px;">Stage 5</span> HTML 查詢網站</li>
+                <li style="line-height: 1.4; margin-bottom: 10px;"><span style="background: #7dd3fc; padding: 2px 8px; border-radius: 4px; margin-right: 5px;">Stage 2</span> 新資料處理、Email 通知、每日報表</li>
+                <li style="line-height: 1.4;"><span style="background: #7dd3fc; padding: 2px 8px; border-radius: 4px; margin-right: 5px;">Stage 3</span> 主管查詢 Web App</li>
+                <li style="margin-top: 10px; font-size: 1.2rem; color: #475569;">✔ 建立自動化觸發機制</li>
+                <li style="font-size: 1.2rem; color: #475569;">✔ 整合 Gmail 與 Web App</li>
               </ul>
           </div>
       </div>
       
       <div style="text-align: center; margin-top: 30px;">
           <p style="font-size: 1.6rem; font-weight: bold; color: #b45309; background: #fffbeb; padding: 15px 25px; border-radius: 15px; display: inline-block; border: 2px dashed #fcd34d; transform: rotate(1deg);">
-            Gemini 負責完成一次性建置，GAS 負責持續、自動、無人操作地執行。
+            Gemini 負責一次性建置，GAS 負責未來持續自動執行。
           </p>
       </div>
   </div></div>
 
-  <!-- 7. Stage 1 -->
+  <!-- 7. Stage 0 -->
   <div class="slide"><div class="sketchy-box">
-      <h1 style="text-align: center; margin-bottom: 20px;">Stage 1｜右側 Gemini 直接整理表格</h1>
+      <span class="doodle" style="top: -20px; left: -20px;">🏗️</span>
+      <h1 style="text-align: center; margin-bottom: 10px;"><span class="hl-yellow">Stage 0</span>｜從零開始：自動產生表單與測試資料</h1>
       
-      <div class="action-card" style="margin: 0 auto; max-width: 800px;">
-          <div class="ac-header">🎯 實戰 1：整理目前 Sheet</div>
+      <p style="text-align: center; font-size: 1.4rem; color: #334155; margin-bottom: 20px; font-weight: bold;">
+        為了示範，我們先讓 AI 幫我們瞬間建好「意見反映單」並塞入 10 筆逼真的情境資料！
+      </p>
+
+      <div class="action-card" style="margin: 0 auto; max-width: 900px; align-items: stretch;">
+          <div class="ac-tool gas">
+              📌 工具位置：
+              <a href="https://script.google.com/home/?hl=zh-tw" target="_blank" style="background: #0284c7; color: white; padding: 4px 10px; border-radius: 6px; text-decoration: none; font-size: 1.1rem; margin: 0 5px; display: inline-block; box-shadow: 2px 2px 0 rgba(0,0,0,0.1); transition: transform 0.1s, box-shadow 0.1s;">
+                  🚀 點我開啟 Google Apps Script 首頁
+              </a>
+              ➔ 建立新專案 ➔ 貼上 AI 產生的程式並執行
+          </div>
+          
+          <div class="ac-prompt-ui" style="margin-top: 5px;">
+              <div style="margin-bottom: 5px;">
+                  <button class="btn-ui toggle-btn" onclick="togglePrompt('p-s0')">👁️ 展開/收合 Prompt</button>
+                  <button class="btn-ui btn-copy" onclick="copyPrompt('p-s0', this)">📋 一鍵複製</button>
+              </div>
+              <div id="p-s0" class="prompt-content hidden">使用 Google Apps Script 建立一份 Google Form「意見反映單」，並建立回覆用 Google Sheet。
+
+請不要加入任何案件管理、自動化、Dashboard、Trigger 或 Email 功能，只需建立以下表單欄位。
+
+【表單欄位】
+
+1. 預反映機構別或單位（下拉選單）
+2. 長輩姓名／床號（簡答）
+3. 回饋性質（單選）
+　• 肯定／感謝
+　• 指教／意見
+　• 改善建議
+　• 其他
+4. 請簡要分享您想肯定的內容（段落）
+5. 指教／意見／建議（段落）
+6. 請說明您希望我們留意或改進的事項（段落）
+7. 填寫人姓名（簡答）
+8. 聯絡方式（簡答）
+9. 電子郵件地址（簡答，Email 驗證）
+
+完成表單建立後，請自動建立 10 筆不同情境的測試資料，直接寫入 Google Form 回覆試算表（模擬表單送出），內容請包含：
+
+- 至少 3 筆肯定／感謝
+- 至少 4 筆一般建議
+- 至少 3 筆較嚴重案件（例如跌倒、受傷、家屬抱怨、服務疏失等）
+
+資料請包含不同機構、不同長輩姓名、不同填寫人及聯絡方式，內容需自然且符合長照機構實際情境，方便後續案件分類、燈號判斷及 Dashboard 示範使用。</div>
+          </div>
+          
+          <div class="ac-result">✅ 執行完成後，你的雲端硬碟會多出一份表單，目前的 Sheet 也會充滿 10 筆測試資料。</div>
+          <div class="ac-next">💡 環境準備完畢！接下來進入 Stage 1 開始把生硬的資料變成戰情室。</div>
+      </div>
+  </div></div>
+
+  <!-- 8. Stage 1 -->
+  <div class="slide"><div class="sketchy-box">
+      <h1 style="text-align: center; margin-bottom: 20px;">Stage 1｜Gemini 完成資料整理與戰情儀表板</h1>
+      
+      <div class="action-card" style="margin: 0 auto; max-width: 900px; align-items: stretch;">
           <div class="ac-tool">📌 工具位置：請貼到 Google Sheets 右側 Gemini 側邊欄</div>
           
-          <div class="ac-prompt-ui">
+          <div class="ac-prompt-ui" style="margin-top: 5px;">
               <div style="margin-bottom: 5px;">
                   <button class="btn-ui toggle-btn" onclick="togglePrompt('p-s1')">👁️ 展開/收合 Prompt</button>
                   <button class="btn-ui btn-copy" onclick="copyPrompt('p-s1', this)">📋 一鍵複製</button>
               </div>
               <div id="p-s1" class="prompt-content hidden">請直接操作目前這張 Google Sheet，不要提供操作步驟、操作說明或 Google Apps Script 程式碼。
-我要將目前這張 Google Form 回傳的資料，整理成第一版案件管理表。
+我要將目前這張 Google Form 回傳的資料，整理成第一版案件管理表與戰情儀表板。
 請依照以下需求直接修改目前的 Google Sheet。
+
 【一、整理欄位】
 請保留 Google Form 所有原始欄位及資料，不要刪除、覆蓋或修改原始欄位內容。
 依照案件管理流程，將下列管理欄位新增至適當位置：
@@ -334,373 +390,280 @@
 - 處理狀態
 - 結案時間
 若欄位已存在，請不要重複建立。
+
 【二、整理現有資料】
 請直接處理目前工作表內所有案件。
 案件編號請依序建立唯一編號。
+
 【三、建立案件判斷規則】
-如果「回饋性質」為：
-肯定／感謝
-請設定為：
-🟢 綠燈
-如果回饋內容包含下列任一關鍵字：
-提告
-媒體
-議員
-記者
-警察
-報警
-受傷
-骨折
-跌倒
-虐待
-疏失
-請設定為：
-🔴 紅燈
-其餘案件請設定為：
-🟡 黃燈
+如果「回饋性質」為：肯定／感謝，請設定為：🟢 綠燈
+如果回饋內容包含下列任一關鍵字：提告、媒體、議員、記者、警察、報警、受傷、骨折、跌倒、虐待、疏失，請設定為：🔴 紅燈
+其餘案件請設定為：🟡 黃燈
+
 【四、建立案件狀態】
-所有案件預設為：
-⏳ 待處理
-並建立下拉選單：
-⏳ 待處理
-🚧 處理中
-✅ 已結案
-🛑 暫緩／其他
+所有案件預設為：⏳ 待處理
+並建立下拉選單：⏳ 待處理、🚧 處理中、✅ 已結案、🛑 暫緩／其他
 
 【五、視覺化管理】
 請依照燈號，自動設定整列背景顏色：
-🟢 綠燈：淡綠色
-🟡 黃燈：淡黃色
-🔴 紅燈：淡紅色
-【六、整理畫面】
-請協助：
-- 第一列標題加粗
-- 凍結第一列
-- 自動調整欄寬
-- 保持整體版面整齊易讀
-請直接完成以上所有操作，不需要提供說明。
- Sheet</div>
+🟢 綠燈：淡綠色、🟡 黃燈：淡黃色、🔴 紅燈：淡紅色
+
+【六、建立戰情儀表板】
+請新增一個工作表，名稱為「📊 戰情儀表板」。
+請使用目前意見反映資料建立以下統計：
+累積案件總數、今日新增案件數、🟢 綠燈件數、🟡 黃燈件數、🔴 紅燈件數、待處理件數、處理中件數、已結案件數、各機構案件數排行、各機構綠燈件數排行。
+請建立：紅黃綠燈分布圓餅圖、各機構案件數長條圖、最近10筆案件列表。
+請使用公式或可持續更新的資料範圍，讓 Google Form 新增資料後，戰情儀表板可以同步更新。
+請將統計卡片放在上方，圖表放在中間，最近案件列表放在下方。
+
+【七、整理畫面】
+請協助：第一列標題加粗、凍結第一列、自動調整欄寬、保持整體版面整齊易讀。
+請一次完成以上所有操作，不需要提供說明。</div>
           </div>
           
-          <div class="ac-result">✅ 完成後會看到：表格中多了案件編號、紅黃綠燈、狀態選單，且底色已變更。</div>
-          <div class="ac-next">💡 為什麼下一步要用 GAS？<br>目前舊資料整理好了，但「明天填的新表單」不會自己加上編號和底色，因此下一步進入 GAS。</div>
+          <div class="ac-result">✅ 完成後會同時看到案件管理表與戰情儀表板。</div>
+          <div class="ac-next">💡 目前舊資料與 Dashboard 已完成，但未來新增的表單資料不會自動處理，因此下一步進入 GAS 自動化。</div>
       </div>
       <p style="text-align: center; font-size: 1.2rem; font-weight: bold; color: #be123c; margin-top: 15px;">⚠️ 醒目提醒：這一段請貼到 Google Sheets 右側 Gemini，不要貼進 Apps Script！</p>
   </div></div>
 
-  <!-- 8. Stage 2 & 3 -->
+  <!-- 9. Stage 2 -->
   <div class="slide"><div class="sketchy-box">
-      <h1 style="text-align: center; margin-bottom: 15px;">收到資料後：自動判斷與通知</h1>
+      <h1 style="text-align: center; margin-bottom: 15px;">Stage 2｜GAS 建立案件自動化系統</h1>
       
-      <div class="two-cols" style="margin-top: 10px;">
-          <!-- Stage 2 -->
-          <div class="action-card">
-              <div class="ac-header">🎯 實戰 2：自動處理新表單</div>
-              <div class="ac-tool gas">📌 工具：貼到網頁版 Gemini 產 Code ➔ 貼入 GAS</div>
-              
-              <div class="ac-prompt-ui">
-                  <button class="btn-ui toggle-btn" onclick="togglePrompt('p-s2')">👁️ 展開</button>
-                  <button class="btn-ui btn-copy" onclick="copyPrompt('p-s2', this)">📋 複製</button>
-                  <div id="p-s2" class="prompt-content hidden">你是一位 Google Apps Script 專家。
-我目前有一張與 Google Form 連動的 Google Sheet。
-表格中已經建立：
-案件編號
-燈號
-處理狀態
-結案時間
-請幫我建立 Google Form 新資料自動處理功能。
-需求如下：
-建立 onFormSubmit(e)。
-每次 Google Form 新增一筆資料時，只處理最新新增的那一列。
-不要重新掃描或修改其他舊資料。
-自動建立不重複的案件編號。
-如果「回饋性質」為「肯定 / 感謝」，設定為「🟢 綠燈」。
-如果內容包含以下任一關鍵字：
-提告、媒體、議員、記者、警察、報警、受傷、骨折、虐待、疏失、跌倒
-設定為「🔴 紅燈」。
-其他意見或建議設定為「🟡 黃燈」。
-依燈號修改新增資料整列的背景顏色。
-處理狀態預設填入「⏳ 待處理」。
-建立 onEdit(e)：當處理狀態改成「✅ 已結案」時，自動填入結案時間；改回其他狀態時清除結案時間。
-不得刪除、搬動或覆蓋 Google Form 原始資料。
-程式必須依照第一列的欄位名稱尋找欄位，不要寫死欄位位置。
-請輸出可以直接貼入 Apps Script 的完整程式碼。
-最後請告訴我如何執行。 
-
-</div>
+      <div class="action-card" style="margin: 0 auto; max-width: 900px; align-items: stretch;">
+          <div class="ac-tool gas">📌 工具位置：貼到網頁版 Gemini 產生完整程式碼，再貼入 Apps Script</div>
+          
+          <div class="ac-prompt-ui" style="margin-top: 5px;">
+              <div style="margin-bottom: 5px;">
+                  <button class="btn-ui toggle-btn" onclick="togglePrompt('p-s2')">👁️ 展開/收合 Prompt</button>
+                  <button class="btn-ui btn-copy" onclick="copyPrompt('p-s2', this)">📋 一鍵複製</button>
               </div>
-              
-              <div class="ac-result" style="font-size: 1.1rem;">✅ 成果：填寫新表單後，表格會自動填入編號與燈號。</div>
-              <div class="ac-next" style="font-size: 1.1rem;">💡 為什麼下一步還需要改？<br>新表單會自動分類了，但主管還不知道，因此下一步要讓 GAS 自動寄信。</div>
-              <div style="font-size: 1rem; color: #be123c; font-weight: bold; margin-top: 5px;">⚠️ 需人工儲存、授權及建立觸發器</div>
+              <div id="p-s2" class="prompt-content hidden"># Stage 2｜建立 GAS 自動化系統
+
+你是一位 Google Apps Script 專家。
+目前這份 Google Sheet 已完成：
+* Google Form 回覆資料
+* 案件管理欄位
+* 案件編號
+* 燈號
+* 處理狀態
+* 戰情儀表板（Dashboard）
+請修改目前的 Apps Script 專案，不要重新建立新的 Sheet，也不要破壞目前已完成的版面、公式及 Dashboard。
+所有欄位請依照第一列欄位名稱辨識，不可寫死欄號。
+請一次提供完整 **Code.gs** 與 **Index.html**。
+
+---
+
+## 一、表單送出後自動建立案件
+
+當 Google Form 有新資料送出時：
+
+* 只處理本次新增的一筆資料。
+* 自動建立案件編號（CASE-0001、CASE-0002……）。
+* 自動判斷燈號：
+
+  * 包含提告、媒體、議員、記者、警察、報警、受傷、骨折、跌倒、虐待、疏失 → 🔴紅燈
+  * 回饋性質為「肯定／感謝」，且沒有紅燈關鍵字 → 🟢綠燈
+  * 其他 → 🟡黃燈
+* 處理狀態預設為「待處理」。
+* 依燈號設定整列背景色。
+* 保留 Google Form 原始資料，不得覆蓋。
+
+請注意：
+不要重新整理整張工作表。
+不要重新建立 Dashboard。
+不要複製上一列整列資料。
+只處理新增的那一列。
+避免造成 #REF!、#ERROR!、公式失效、格式跑掉或 Dashboard 異常。
+
+---
+
+## 二、自動寄送通知 Email
+依照「預反映機構別或單位」，寄送案件通知給對應主管。
+通知內容包含：
+* 案件編號
+* 提交時間
+* 機構
+* 長輩姓名／床號
+* 回饋性質
+* 燈號
+* 完整回饋內容
+* 填寫人姓名
+* 聯絡方式
+* Google Sheet 連結
+
+若填寫人有留下 Email：
+請自動寄送受理通知：
+「您好，您的意見已收到，案件編號為 ○○○，目前已交由相關單位處理，感謝您的寶貴意見。」
+若沒有 Email 或格式錯誤，請略過，不可造成程式停止。
+---
+
+## 三、每日五點主管報表
+建立每天下午五點自動寄送報表功能。
+寄送對象：院長。
+
+內容包含：
+* 今日新增案件
+* 今日綠燈件數
+* 今日黃燈件數
+* 今日紅燈件數
+* 待處理件數
+* 處理中件數
+* 已結案件數
+* 超過七天未結案件
+
+並提供建立每日五點 Trigger 的函式，避免重複建立。
+---
+
+## 五、集中設定
+
+請在 Code.gs 最上方建立 CONFIG，方便修改：
+
+* 工作表名稱
+* 各機構主管 Email
+* 院長 Email
+* Google Sheet 連結
+* 時區（Asia/Taipei）
+
+---
+
+## 六、最後請提供操作步驟
+
+請一次說明：
+
+1. Code.gs 與 Index.html 分別貼到哪裡。
+2. 如何儲存與授權。
+3. 如何建立 Trigger。
+4. 如何測試表單送出。
+5. 如何測試 Email 通知。
+7. 如何測試每日報表。
+
+請輸出可直接使用的完整程式碼，不要省略任何內容，也不要使用偽程式碼。
+</div>
           </div>
           
-          <!-- Stage 3 -->
-          <div class="action-card">
-              <div class="ac-header">🎯 實戰 3：自動寄送 Email</div>
-              <div class="ac-tool gas">📌 工具：貼到網頁版 Gemini 產 Code ➔ 貼入 GAS</div>
-              
-              <div class="ac-prompt-ui">
-                  <button class="btn-ui toggle-btn" onclick="togglePrompt('p-s3')">👁️ 展開</button>
-                  <button class="btn-ui btn-copy" onclick="copyPrompt('p-s3', this)">📋 複製</button>
-                  <div id="p-s3" class="prompt-content hidden">Gemini 右側可以幫你寫信件內容，但「表單一送出便自動寄信」仍需要 GAS。
-請修改目前的 Google Apps Script，保留所有既有功能。
-加入意見反映 Email 自動通知系統。
-請在程式最上方建立 CONFIG 設定區，集中管理：
-書記 Email
-社工 Email
-管理者 Email
-各機構對應主管 Email
-紅燈案件通知名單
-請依照 Google Form 中的「預反映機構別或單位」，自動找到該機構主管的 Email。
-寄信規則如下：
-【🟢 綠燈】
-寄給該機構主管。
-副本寄給書記。
-另外寄送感謝信給表單填寫人的 Email。
-【🟡 黃燈】
-寄給該機構主管。
-副本寄給社工及書記。
-另外寄送案件受理通知給表單填寫人的 Email。
-【🔴 紅燈】
-寄給該機構主管。
-副本寄給社工及書記。
-密件副本寄給紅燈管理名單。
-另外寄送重要案件受理通知給表單填寫人的 Email。
-內部通知信須包含：
-案件編號
-提交時間
-填寫人姓名
-聯絡方式
-機構
-長輩姓名或床號
-燈號
-完整回饋內容
-Google Sheet 連結
-請將寄信功能整合進目前的表單提交處理流程，確保同一案件只寄送一次。
-如果填寫人沒有有效的 Email，略過家屬信件，但內部通知仍須正常寄送。
-請輸出完整 Google Apps Script，不能只輸出新增片段。
-最後請告訴我如何執行。 
-</div>
-              </div>
-              
-              <div class="ac-result" style="font-size: 1.1rem;">✅ 成果：測試送出紅黃綠表單，信箱會收到通知信。</div>
-              <div class="ac-next" style="font-size: 1.1rem;">💡 為什麼下一步要回 Sheets？<br>信件能自動寄了，但主管想看整體統計，因此下一步要建立戰情儀表板。</div>
-          </div>
+          <div class="ac-result" style="font-size: 1.1rem;">✅ 完成後，新表單資料會自動建立案件編號、判斷燈號、寄送通知，並於每日五點寄送主管報表。</div>
+          <div class="ac-next" style="font-size: 1.2rem; color: #9f1239; background: #fff1f2; padding: 10px; border-radius: 8px; font-weight: bold; border: 1px dashed #fca5a5; margin-top: auto;">💡 核心自動化已完成！下一步另外新增 WebApp.gs 與 Index.html，建立主管查詢網站。</div>
       </div>
   </div></div>
 
-  <!-- 9. Stage 4A & 4B -->
+  <!-- 10. Stage 3 -->
   <div class="slide"><div class="sketchy-box">
-      <h1 style="text-align: center; margin-bottom: 15px;">追蹤與回報：戰情室與自動日報</h1>
+      <h1 style="text-align: center; margin-bottom: 15px;">Stage 3｜新增主管查詢 Web App</h1>
       
-      <div class="two-cols" style="margin-top: 10px;">
-          <!-- Stage 4A -->
-          <div class="action-card">
-              <div class="ac-header">🎯 實戰 4：Gemini 建立儀表板</div>
-              <div class="ac-tool">📌 工具：請回到 Google Sheets 右側 Gemini</div>
-              
-              <div class="ac-prompt-ui">
-                  <button class="btn-ui toggle-btn" onclick="togglePrompt('p-s4a')">👁️ 展開</button>
-                  <button class="btn-ui btn-copy" onclick="copyPrompt('p-s4a', this)">📋 複製</button>
-                  <div id="p-s4a" class="prompt-content hidden">請直接操作目前這張 Google Sheet，不要產生 Apps Script。
-請新增一個工作表，名稱為：
-📊 戰情儀表板
-請使用目前意見反映資料建立以下統計：
-累積案件總數
-今日新增案件數
-🟢 綠燈件數
-🟡 黃燈件數
-🔴 紅燈件數
-待處理件數
-處理中件數
-已結案件數
-各機構案件數排行
-各機構綠燈件數排行
-請建立：
-紅黃綠燈分布圓餅圖
-各機構案件數長條圖
-最近10筆案件列表
-請使用公式或可持續更新的資料範圍，讓 Google Form 新增資料後，戰情儀表板可以同步更新。
-請將統計卡片放在上方，圖表放在中間，最近案件列表放在下方。
-請直接建立並美化工作表。
-這一步很適合 Gemini，因為是建立表格、公式、圖表與版面。
-</div>
-              </div>
-              
-              <div class="ac-result" style="font-size: 1.1rem;">✅ 成果：出現精美的 Dashboard 與圖表。</div>
-              <div class="ac-next" style="font-size: 1.1rem;">💡 為什麼下一步要用 GAS？<br>Dashboard 完成了，但每天下午五點不會自己寄給主管，因此需要 GAS 幫忙排程。</div>
-              <div style="font-size: 1rem; color: #be123c; font-weight: bold; margin-top: 5px;">⚠️ 醒目提醒：這段不需要寫 GAS。</div>
-          </div>
+      <div class="action-card" style="margin: 0 auto; max-width: 900px; align-items: stretch;">
+          <div class="ac-tool gas">📌 工具位置：在同一個 Apps Script 專案新增 WebApp.gs 與 Index.html</div>
           
-          <!-- Stage 4B -->
-          <div class="action-card">
-              <div class="ac-header">🎯 實戰 5：GAS 每日五點日報</div>
-              <div class="ac-tool gas">📌 工具：貼到網頁版 Gemini 產 Code ➔ 貼入 GAS</div>
-              
-              <div class="ac-prompt-ui">
-                  <button class="btn-ui toggle-btn" onclick="togglePrompt('p-s4b')">👁️ 展開</button>
-                  <button class="btn-ui btn-copy" onclick="copyPrompt('p-s4b', this)">📋 複製</button>
-                  <div id="p-s4b" class="prompt-content hidden">請修改目前 Google Apps Script，保留所有既有功能。
-新增主管每日戰情報表寄送功能。
-請建立函式：
-sendDailyReport()
-每次執行時，請統計：
-今日新增案件數
-今日綠燈件數
-今日黃燈件數
-今日紅燈件數
-目前待處理件數
-目前處理中件數
-目前已結案件數
-超過7天尚未結案的案件數
-如果有超過7天未結案的案件，請在信件中列出：
-案件編號
-機構
-燈號
-目前狀態
-已經過天數
-Email 收件人請集中放在 CONFIG 設定區。
-信件中請附上：
-Google Sheet 連結
-「📊 戰情儀表板」連結
-另外建立初始化函式：
-setupDailyTrigger()
-執行後建立每天台灣時間下午5點執行 sendDailyReport() 的時間驅動觸發器。
-如果相同觸發器已存在，先刪除舊的再重新建立，避免重複寄信。
-請輸出完整 Google Apps Script。
-最後請告訴我如何執行。 
-</div>
+          <div class="ac-prompt-ui" style="margin-top: 5px;">
+              <div style="margin-bottom: 5px;">
+                  <button class="btn-ui toggle-btn" onclick="togglePrompt('p-s3')">👁️ 展開/收合 Prompt</button>
+                  <button class="btn-ui btn-copy" onclick="copyPrompt('p-s3', this)">📋 一鍵複製</button>
               </div>
-              
-              <div class="ac-result" style="font-size: 1.1rem;">✅ 成果：手動執行測試後，信箱會收到總結日報。</div>
-              <div class="ac-next" style="font-size: 1.1rem;">💡 課程到此已全自動化！<br>進階思考：主管能不能不要開表單也能用網址查？</div>
-          </div>
-      </div>
-  </div></div>
+              <div id="p-s3" class="prompt-content hidden">你是一位 Google Apps Script 專家。
+目前這個 Apps Script 專案已經有 Code.gs，並完成：
 
-  <!-- 10. 彩蛋：Stage 5 -->
-  <div class="slide"><div class="sketchy-box" style="text-align: center; padding: 40px 50px;">
-      <span class="doodle" style="top: -20px; right: -10px;">🥚</span>
-      <h1 style="font-size: 2.5rem; margin-bottom: 20px;">🎉 Stage 5｜把 GAS 變成主管查詢網站</h1>
-      <p style="font-size: 1.3rem; color: #be123c; font-weight: bold; background: #ffe4e6; display: inline-block; padding: 5px 15px; border-radius: 20px;">⚠️ 進階示範：學員今天不需要完整跟做。</p>
-      
-      <div class="action-card" style="margin: 20px auto; max-width: 900px; text-align: left;">
-          <div class="ac-tool gas" style="margin-bottom: 10px;">📌 實戰方式：由 AI 產生 Code.gs 與 Index.html，再人工部署 Web App</div>
-          
-          <div class="ac-prompt-ui" style="margin-bottom: 15px;">
-              <button class="btn-ui toggle-btn" onclick="togglePrompt('p-s5')">👁️ 展開 Prompt (供課後參考複製)</button>
-              <button class="btn-ui btn-copy" onclick="copyPrompt('p-s5', this)">📋 複製</button>
-              <div id="p-s5" class="prompt-content hidden">請修改目前的 Google Apps Script 專案，保留所有既有功能。
-我要新增一個供機構主管使用的 HTML 查詢網站，讓主管可以透過網址查詢自己機構的意見反映案件。
-請使用 Google Apps Script Web App 架構建立：
-Code.gs
+表單新增資料自動處理
+案件編號與燈號判斷
+Email 自動通知
+每日主管報表
+CONFIG 集中設定
+現在請在同一個 Apps Script 專案內，另外新增：
+
+WebApp.gs
 Index.html
-【一、網站功能】
-網站開啟後顯示：
-標題：「意見反映案件查詢系統」
-機構選擇下拉選單
-案件編號搜尋欄
+不要修改或重寫原本的 Code.gs。
+Google Apps Script 專案中的所有 .gs 檔案會共同執行，因此函式名稱、變數名稱與常數名稱不可重複。
+【一、沿用原有設定】
+請直接沿用 Code.gs 裡既有的 CONFIG。
+不要在 WebApp.gs 再次建立 const CONFIG，避免發生重複宣告錯誤。
+如果需要新增設定值，請告訴我應加入原本 CONFIG 的哪個位置，不要建立第二個 CONFIG。
+【二、建立 Web App 後端】
+請在 WebApp.gs 建立：
+
+doGet()
+getWebAppInstitutionList()
+searchWebAppCases(filters)
+除 doGet() 外，其他函式名稱請加入 WebApp，避免與原本 Code.gs 的函式重複。
+所有欄位請依第一列欄位名稱辨識，不可寫死欄號。
+【三、查詢條件】
+網站提供：
+
+機構下拉選單
+案件編號搜尋
 燈號篩選
 處理狀態篩選
 查詢按鈕
 清除條件按鈕
-【二、查詢結果】
-查詢後顯示該機構的案件，欄位包含：
+機構選單請從工作表現有資料自動整理，不要寫死在 HTML。
+【四、查詢結果】
+顯示：
+
 案件編號
 提交時間
 機構
+長輩姓名／床號
 燈號
 處理狀態
-填寫人姓名
-長輩姓名／床號
 回饋內容
 結案時間
-請不要顯示：
-家屬電話
-家屬 Email
-內部收件人 Email
-程式設定資料
-【三、資料來源】
-請從目前 Google Sheet 的主要資料工作表讀取資料。
-程式必須依照第一列欄位名稱尋找資料，不要寫死欄位位置。
-需要辨識的欄位名稱包括：
-案件編號
-時間戳記
-預反映機構別或單位
-燈號
-處理狀態
-填寫人姓名
-長輩姓名／床號
-肯定內容
-指教／意見／建議
-希望留意或改進的事項
-結案時間
-回饋內容請自動合併有填寫的相關欄位，空白欄位不要顯示。
-【四、機構清單】
-機構下拉選單請從工作表中的「預反映機構別或單位」欄位自動取得。
-請自動去除：
-空白
-重複機構
-表頭文字
-並依照文字排序。
-【五、網站畫面】
-請使用 HTML、CSS 與 JavaScript 建立簡潔、專業、適合手機使用的介面。
-畫面需求：
-白底
-清楚的查詢區
-案件以卡片或表格顯示
-綠燈使用淡綠色
-黃燈使用淡黃色
-紅燈使用淡紅色
-手機畫面自動調整
-查詢時顯示「資料讀取中」
-查不到資料時顯示「目前查無符合案件」
-【六、GAS 函式】
-請建立：
-doGet()
-getInstitutionList()
-searchCases(filters)
-前端請使用 google.script.run 呼叫後端函式。
-【七、基本安全】
-第一版網站只提供查詢功能，不提供新增、修改、刪除資料。
-請避免將完整工作表資料一次傳到前端。
-查詢條件送到後端後，由後端篩選，再回傳符合的案件。
-【八、輸出方式】
-請輸出完整的：
-Code.gs
-Index.html
-不要省略任何程式碼。
-最後請用簡單中文告訴我：
-如何在 Apps Script 新增 HTML 檔案。
-Code.gs 要貼在哪裡。
-Index.html 要貼在哪裡。
-如何部署為網頁應用程式。
-「執行身分」與「誰可以存取」應該如何選擇。
-程式更新後如何重新部署新版本。</div>
-          </div>
+不同燈號使用淡綠、淡黃、淡紅色顯示。
+查詢結果依提交時間由新到舊排列。
+【五、隱私與限制】
+網站只能查詢，不可新增、修改或刪除。
+不得顯示：
 
-          <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-             <div style="flex: 1; background: #f1f5f9; padding: 15px; border-radius: 8px; border: 1px dashed #94a3b8;">
-                 <h4 style="margin: 0 0 10px 0; color: #0f172a;">📄 Code.gs</h4>
-                 <p style="margin:0; font-size: 1.1rem;">建立 doGet() 與負責讀取 Sheet 案件資料的 API 邏輯。</p>
-             </div>
-             <div style="flex: 1; background: #f1f5f9; padding: 15px; border-radius: 8px; border: 1px dashed #94a3b8;">
-                 <h4 style="margin: 0 0 10px 0; color: #0f172a;">🌐 Index.html</h4>
-                 <p style="margin:0; font-size: 1.1rem;">負責網頁畫面，包含機構下拉選單與過濾表格。</p>
-             </div>
+填寫人聯絡方式
+填寫人 Email
+主管 Email
+院長 Email
+CONFIG
+內部通知名單
+不要將完整工作表資料一次傳到前端。
+前端請使用 google.script.run 呼叫後端，由後端篩選後再回傳結果。
+【六、網頁介面】
+建立完整 Index.html。
+要求：
+
+使用繁體中文
+手機與電腦都可正常瀏覽
+畫面簡潔易讀
+查詢時顯示「資料讀取中」
+查無資料顯示「目前查無符合案件」
+查詢失敗顯示容易理解的訊息
+長文字自動換行
+手機使用卡片式顯示
+【七、避免影響原有功能】
+不可：
+
+修改 Code.gs
+修改 onFormSubmit(e)
+修改 onEdit(e)
+修改 Email 通知
+修改每日報表
+修改觸發器
+修改 Sheet 資料、公式、排版或 Dashboard
+重新宣告 CONFIG
+建立與原有程式同名的函式
+【八、輸出要求】
+請提供：
+
+完整 WebApp.gs
+完整 Index.html
+如何新增 WebApp.gs
+如何新增 Index.html
+程式碼分別貼在哪裡
+如何儲存與授權
+如何部署 Web App
+執行身分及存取權限如何選擇
+如何測試網站
+修改程式後如何部署新版本
+請提供可直接使用的完整程式碼，不要省略，也不要使用偽程式碼。</div>
           </div>
           
-          <div style="text-align: center; font-size: 2rem; color: #94a3b8; margin: 10px 0;">⬇️</div>
-          
-          <div style="background: #fef08a; padding: 15px 20px; border-radius: 12px; border: 2px solid #facc15; text-align: center; font-weight: bold; font-size: 1.4rem; color: #b45309;">
-             🔗 部署成 Web App 網址 (第一版只提供查詢，不開放修改)
-          </div>
+          <div class="ac-result" style="font-size: 1.1rem;">✅ 完成後，主管可透過網址依機構、案件編號、燈號及狀態查詢案件。</div>
+          <div class="ac-next" style="font-size: 1.2rem; color: #9f1239; background: #ffe4e6; padding: 10px; border-radius: 8px; font-weight: bold; border: 2px dashed #fda4af; margin-top: auto;">⚠️ WebApp.gs 與 Code.gs 位於同一個專案，函式名稱與 CONFIG 不可重複宣告。</div>
       </div>
-      
-      <p style="font-size: 1.5rem; margin-top: 20px; color: #1e293b; font-weight: bold; background: #e0f2fe; padding: 15px; border-radius: 8px; display: inline-block; border: 2px dashed #7dd3fc;">
-        主管不需要打開整份 Google Sheet，只要開啟網址，就能查看自己單位的案件。
-      </p>
   </div></div>
 
   <!-- 11. 流程總結 -->
@@ -708,21 +671,15 @@ Index.html 要貼在哪裡。
       <span class="doodle" style="top: -20px; left: -20px;">🧩</span>
       <h1 style="margin-bottom: 10px;">原來，每個流程都可以這樣拆！</h1>
 
-      <!-- 橫向流程圖 -->
+      <!-- 橫向流程圖 (四個階段) -->
       <div style="display: flex; justify-content: center; align-items: center; gap: 6px; flex-wrap: wrap; margin: 20px 0;">
-          <div style="background: #f8fafc; border: 2px solid #94a3b8; padding: 8px 10px; border-radius: 8px; font-weight: bold; font-size: 1.1rem;">📝 Form<br>收資料</div>
-          <div style="color: #cbd5e1; font-weight: bold;">➔</div>
-          <div style="background: #f0fdf4; border: 2px solid #4ade80; padding: 8px 10px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; color: #064e3b;">🤖 S1: Gemini<br>整理舊資料</div>
-          <div style="color: #cbd5e1; font-weight: bold;">➔</div>
-          <div style="background: #e0f2fe; border: 2px solid #38bdf8; padding: 8px 10px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; color: #0c4a6e;">🧠 S2: GAS<br>處理新資料</div>
-          <div style="color: #cbd5e1; font-weight: bold;">➔</div>
-          <div style="background: #e0f2fe; border: 2px solid #38bdf8; padding: 8px 10px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; color: #0c4a6e;">🧠 S3: GAS<br>自動寄信</div>
-          <div style="color: #cbd5e1; font-weight: bold;">➔</div>
-          <div style="background: #f0fdf4; border: 2px solid #4ade80; padding: 8px 10px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; color: #064e3b;">🤖 S4A: Gemini<br>建立 Dashboard</div>
-          <div style="color: #cbd5e1; font-weight: bold;">➔</div>
-          <div style="background: #e0f2fe; border: 2px solid #38bdf8; padding: 8px 10px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; color: #0c4a6e;">🧠 S4B: GAS<br>寄送日報</div>
-          <div style="color: #cbd5e1; font-weight: bold;">➔</div>
-          <div style="background: #f3e8ff; border: 2px solid #c084fc; padding: 8px 10px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; color: #4c1d95;">🌐 S5: HTML<br>網站查詢</div>
+          <div style="background: #f8fafc; border: 2px solid #94a3b8; padding: 8px 12px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; text-align: center;">📝 Form<br>收集資料</div>
+          <div style="color: #cbd5e1; font-weight: bold; font-size: 1.5rem;">➔</div>
+          <div style="background: #f0fdf4; border: 2px solid #4ade80; padding: 8px 12px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; color: #064e3b; text-align: center;">🤖 Stage 1: Gemini<br>整理案件表＋Dashboard</div>
+          <div style="color: #cbd5e1; font-weight: bold; font-size: 1.5rem;">➔</div>
+          <div style="background: #e0f2fe; border: 2px solid #38bdf8; padding: 8px 12px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; color: #0c4a6e; text-align: center;">🧠 Stage 2: GAS<br>處理新資料＋寄信＋日報</div>
+          <div style="color: #cbd5e1; font-weight: bold; font-size: 1.5rem;">➔</div>
+          <div style="background: #e0f2fe; border: 2px solid #38bdf8; padding: 8px 12px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; color: #0c4a6e; text-align: center;">🌐 Stage 3: GAS<br>新增主管查詢 Web App</div>
       </div>
 
       <!-- 核心思維 -->
@@ -737,8 +694,8 @@ Index.html 要貼在哪裡。
           </ul>
       </div>
 
-      <p style="font-size: 1.8rem; font-weight: bold; color: #e11d48; margin-top: 15px; margin-bottom: 0; background: #ffe4e6; padding: 10px; border-radius: 10px;">
-          先用 Gemini 建立，再用 GAS 讓流程持續運作。
+      <p style="font-size: 1.8rem; font-weight: bold; color: #e11d48; margin-top: 25px; margin-bottom: 0; background: #ffe4e6; padding: 10px 20px; border-radius: 10px; display: inline-block;">
+          Gemini 負責一次性建置，GAS 負責未來持續自動執行。
       </p>
   </div></div>
 
@@ -814,7 +771,7 @@ Index.html 要貼在哪裡。
   const slider = document.getElementById('slider');
   const pageIndicator = document.getElementById('page-indicator');
   
-  // 新增：動畫狀態鎖定，防止連續按鍵導致畫面卡在兩頁中間
+  // 動畫狀態鎖定，防止連續按鍵導致畫面卡在兩頁中間
   let isAnimating = false;
 
   function updateSlide() {
@@ -832,10 +789,10 @@ Index.html 要貼在哪裡。
     // 只針對左右方向鍵進行處理
     if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
       
-      // 修復 1：阻擋瀏覽器預設的焦點行為或水平滾動
+      // 阻擋瀏覽器預設的焦點行為或水平滾動
       e.preventDefault(); 
       
-      // 修復 2：如果還在翻頁動畫中，忽略此次按鍵，防止連按錯亂
+      // 如果還在翻頁動畫中，忽略此次按鍵，防止連按錯亂
       if (isAnimating) return; 
 
       if (e.key === 'ArrowRight' && currentSlide < slides.length - 1) {
@@ -848,7 +805,6 @@ Index.html 要貼在哪裡。
     }
   });
 
-  // UI Interactive Scripts
   function togglePrompt(id) {
     const el = document.getElementById(id);
     if (el.style.display === 'none' || el.style.display === '') {
